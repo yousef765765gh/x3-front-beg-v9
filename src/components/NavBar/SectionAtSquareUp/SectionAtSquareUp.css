@@ -1,0 +1,50 @@
+.at-square-up{
+    max-width: 100%;
+    margin: 0 162px;
+    height: max-content;
+    border: 1px solid var(--whit-gray-color);
+    border-top: none !important;
+    overflow:hidden;
+    .at-squar-card{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .show-more-btn{
+        width: 127px;
+        border-radius: 6px;
+        margin: 0 auto;
+        border: none;
+        button{
+        background-color: var(--lime-green-color);
+        font-size: 14px;
+        padding: 14px 24px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 500;
+        line-height: 150%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        &:hover{
+            background-color: var(--whit-green-text-color);
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(217, 255, 63, 0.6);
+        }
+        }
+        
+ 
+    }
+}
+@media screen and (max-width:1440px){
+    .at-square-up{
+        margin: 0 80px;
+    }
+}
+@media screen and (max-width:992px){
+    .at-square-up{
+        margin: 0 16px;
+        .at-squar-card{
+            grid-template-columns: 1fr;
+        }
+    }
+}
