@@ -1,0 +1,263 @@
+.faq-section {
+    display: flex !important;
+    align-items: flex-start !important;
+    padding-left: 160px;
+    padding-right: 160px;
+
+}
+
+.faq-column {
+    flex-direction: column;
+    width: 50%;
+}
+
+.mobile-answer {
+    display: none;
+}
+
+.faq-card {
+    display: flex;
+    flex-direction: column;
+    border: 0.25px solid var(--whit-gray-color);
+    background: var(--whit-gray-color);
+
+}
+
+
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    cursor: pointer;
+}
+
+.num-bg {
+    align-self: flex-start;
+    padding-right: 30px;
+}
+
+.number {
+    width: 80px;
+    height: 80px;
+    font-family: Barlow;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 28px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: linear-gradient(rgba(36, 36, 36, 1), rgba(36, 36, 36, 0));
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 1);
+    transition: color 0.3s ease;
+}
+
+.faq-card.open .number {
+    color: var(--lime-green-color);
+    background: linear-gradient(rgba(36, 36, 36, 1), rgba(36, 36, 36, 0));
+
+}
+
+.content {
+    flex: 1;
+    align-self: center;
+}
+
+.question {
+    height: 48px;
+    display: flex;
+    font-family: Barlow;
+    font-weight: 500;
+    font-style: Medium;
+    align-items: center;
+    margin: 0;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 1);
+    transition: color 0.3s ease;
+    line-height: 100%;
+    padding-right: 20px;
+}
+
+.faq-card.open .question {
+    color: var(--lime-green-color);
+    padding-top: 24px;
+
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+
+    color: rgba(255, 255, 255, 1);
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+.icon svg {
+    width: 34px;
+    height: 34px;
+
+}
+
+.faq-card.open .icon {
+    color: var(--lime-green-color);
+    align-self: flex-start;
+    padding-top: 26px;
+}
+
+.answer {
+    padding-right: 40px;
+    padding-bottom: 34px;
+    margin: 0;
+    padding-top: 20px;
+    color: rgba(255, 255, 255, 1);
+    line-height: 150%;
+    font-family: Barlow;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
+
+
+
+}
+
+@media (max-width:1440px) {
+    .faq-section {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .num-bg {
+        padding-right: 24px;
+        padding-left: 40px;
+
+    }
+
+    .number {
+        width: 62px;
+        height: 62px;
+        font-size: 24px;
+
+    }
+
+    .faq-card.open .icon {
+        padding-top: 18px;
+    }
+
+    .question {
+
+        font-size: 18px;
+    }
+
+    .faq-card.open .question {
+        padding-bottom: 15px;
+    }
+
+    .icon svg {
+        height: 26px;
+        width: 26px;
+    }
+
+    .answer {
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 14px;
+        line-height: 150%;
+        padding-top: 18px;
+        padding-bottom: 30px;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .faq-column {
+
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .faq-column:first-child {
+        border: 0.25px solid var(--whit-gray-color);
+        border-bottom: none;
+    }
+
+    .faq-section {
+        flex-direction: column;
+        padding-left: 16px !important;
+        padding-right: 16px;
+    }
+
+    .number {
+        width: 52px;
+        height: 52px;
+        font-size: 20px;
+    }
+
+    .num-bg {
+        padding-left: 0px;
+        padding-right: 20px;
+    }
+
+    .icon svg {
+        height: 24px;
+        width: 24px;
+    }
+
+
+
+
+
+    .mobile-answer {
+        font-size: 13px;
+        margin-top: -2px !important;
+        color: rgba(230, 230, 230, 1);
+        display: block;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-bottom: 30px;
+
+
+    }
+
+    .content {
+        min-width: 0;
+        flex: 1;
+
+
+
+    }
+
+    .number {
+        color: rgba(255, 255, 255, 1);
+        background: linear-gradient(rgba(36, 36, 36, 1), rgba(36, 36, 36, 0));
+    }
+
+    .question {
+        white-space: wrap;
+        word-break: keep-all;
+        color: rgba(255, 255, 255, 1);
+        font-family: Barlow;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 14px;
+        max-width: 192px;
+        line-height: 100%;
+
+
+    }
+
+    .answer {
+        display: none;
+    }
+
+    .faq-card.open {
+        overflow: hidden;
+        border: none !important;
+
+    }
+
+
+}
