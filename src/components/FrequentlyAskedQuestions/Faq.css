@@ -1,12 +1,38 @@
-.faq-section {
-    display: flex !important;
-    align-items: flex-start !important;
+.l-sec {
     padding-left: 160px;
     padding-right: 160px;
 
+    
+}
+
+.faq-section {
+    display: flex !important;
+    align-items: flex-start !important;
+    border: 0.25px solid var(--whit-gray-color);
+    
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+
+}
+.faq-column::before{
+    content: "";
+    border: 0.25px solid var(--whit-gray-color);
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    transform: rotateY(45deg);
+    
+    
+    
 }
 
 .faq-column {
+    border: 0.25px solid var(--whit-gray-color);
+    border-right: none;
+    border-left: none;
     flex-direction: column;
     width: 50%;
 }
@@ -19,7 +45,7 @@
     display: flex;
     flex-direction: column;
     border: 0.25px solid var(--whit-gray-color);
-    background: var(--whit-gray-color);
+    background: var(--dark-gray-color);
 
 }
 
@@ -87,22 +113,24 @@
 
 }
 
-.icon {
+.l-icon {
     display: flex;
     align-items: center;
 
     color: rgba(255, 255, 255, 1);
     flex-shrink: 0;
-    transition: color 0.3s ease;
+
 }
 
-.icon svg {
+
+.l-icon svg {
+
     width: 34px;
     height: 34px;
 
 }
 
-.faq-card.open .icon {
+.faq-card.open .l-icon {
     color: var(--lime-green-color);
     align-self: flex-start;
     padding-top: 26px;
@@ -125,9 +153,15 @@
 }
 
 @media (max-width:1440px) {
-    .faq-section {
+    .l-sec {
         padding-left: 80px;
         padding-right: 80px;
+    }
+
+    .faq-section {
+        margin-top: 60;
+        
+
     }
 
     .num-bg {
@@ -143,7 +177,7 @@
 
     }
 
-    .faq-card.open .icon {
+    .faq-card.open .l-icon {
         padding-top: 18px;
     }
 
@@ -156,7 +190,7 @@
         padding-bottom: 15px;
     }
 
-    .icon svg {
+    .l-icon svg {
         height: 26px;
         width: 26px;
     }
@@ -173,10 +207,18 @@
 }
 
 @media (max-width: 992px) {
+    .l-sec {
+        padding-left: 16px !important;
+        padding-right: 16px;
+    }
+
     .faq-column {
 
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
+    }
+    .faq-column::before{
+        border: none;
     }
 
     .faq-column:first-child {
@@ -185,9 +227,12 @@
     }
 
     .faq-section {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
         flex-direction: column;
-        padding-left: 16px !important;
-        padding-right: 16px;
+
     }
 
     .number {
@@ -201,7 +246,7 @@
         padding-right: 20px;
     }
 
-    .icon svg {
+    .l-icon svg {
         height: 24px;
         width: 24px;
     }

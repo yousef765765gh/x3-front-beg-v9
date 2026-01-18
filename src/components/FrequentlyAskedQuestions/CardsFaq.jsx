@@ -18,7 +18,7 @@ const CardsFaq = ({ index, question, answer, isOpen, onToggle }) => {
                         isOpen={isOpen} />
 
 
-                    <span className="icon">{isOpen ? <FiX /> : <FiPlus />}</span>
+                    <span className="l-icon">{isOpen ? <FiX /> : <FiPlus />}</span>
                 </div>
                 {isOpen && (
                     <div className="mobile-answer">

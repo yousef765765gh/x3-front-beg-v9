@@ -25,29 +25,31 @@ const Faq = () => {
     const col2 = questionData.slice(half, visibleCount);
     return (
         <>
-            <section className="faq-section">
+            <section className='l-sec'>
                 <AboutHeroSection
                     hasButton={false}
                     imageBackground={faqSecPic}
                     titleSection="Frequently Asked Questions"
                     contentSection="Still you have any questions? Contact our Team via hello@squareup.com" />
-                <div className="faq-column">
-                    {/* الاستدعاء وتعباية الكروت */}
+                <div className="faq-section">
+                    <div className="faq-column">
+                        {/* الاستدعاء وتعباية الكروت */}
 
-                    {col1.map((item, i) => (
-                        <CardsFaq key={i}
-                            index={i}
+                        {col1.map((item, i) => (
+                            <CardsFaq key={i}
+                                index={i}
+                                question={item.question}
+                                answer={item.answer}
+                                isOpen={openIndex === i}
+                                onToggle={() => setOpenIndex(openIndex === i ? null : i)} />))}</div>{/* لنشوف العنصر المفتوح او المسكر */}
+                    < div className="faq-column" > {col2.map((item, i) => (
+                        <CardsFaq key={i + half}
+                            index={i + half}
                             question={item.question}
-                            answer={item.answer}
-                            isOpen={openIndex === i}
-                            onToggle={() => setOpenIndex(openIndex === i ? null : i)} />))}</div>{/* لنشوف العنصر المفتوح او المسكر */}
-                < div className="faq-column" > {col2.map((item, i) => (
-                    <CardsFaq key={i + half}
-                        index={i + half}
-                        question={item.question}
 
-                        answer={item.answer}
-                        isOpen={openIndex === i + half} onToggle={() => setOpenIndex(openIndex === i + half ? null : i + half)} />))}
+                            answer={item.answer}
+                            isOpen={openIndex === i + half} onToggle={() => setOpenIndex(openIndex === i + half ? null : i + half)} />))}
+                    </div>
                 </div>
             </section>
         </>
