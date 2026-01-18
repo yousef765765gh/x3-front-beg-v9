@@ -3,6 +3,7 @@ import CardsFaq from './CardsFaq';
 import faqSecPic from '/assets/img/faq section Home+hero section process+contactusfaq.png'
 import "./Faq.css";
 import { questionData } from '../../data/FAQ';
+import AboutHeroSection from '../about_hero_section/AboutHeroSection';
 const Faq = () => {
     const [visibleCount, setVisibleCount] = useState(questionData.length);
     const [openIndex, setOpenIndex] = useState(null);
