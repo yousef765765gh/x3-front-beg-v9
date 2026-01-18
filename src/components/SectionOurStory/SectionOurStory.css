@@ -19,11 +19,19 @@
 @media screen and (max-width:1440px){
     .our-story{
         margin: 0 80px;
+        .ourstory-title{
+        margin-top: 80px;
+        margin-bottom: 80px;
+        }
     }
 }
 @media screen and (max-width:992px){
     .our-story{
         margin: 0 16px;
+        .ourstory-title{
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
         .our-story-card{
             grid-template-columns: 1fr;
         }
