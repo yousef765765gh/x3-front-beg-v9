@@ -1,0 +1,222 @@
+/* ايقونة الكرت */
+.yb-icon{
+    border-radius: 10px;
+    width: 88px;
+    height: 88px;
+    border: 1px solid var(--whit-gray-color);
+    padding: 24px;
+    margin-bottom: 40px;
+    background: linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%),linear-gradient(229.29deg, rgba(158, 255, 0, 0.2) 0%, rgba(158, 255, 0, 0) 32.16%);
+    
+    .yb-img{
+        background-color: transparent;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.yb-our-services{
+    display: flex;
+    
+    .yb-card{
+        max-width: 532px;
+        min-height: 577px;
+        padding: 50px;
+    }
+
+    .yb-title{
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .yb-description{
+        font-size: 18px;
+        color: white;
+    }
+
+    .yb-btn{
+    padding: 18px 16px;
+    text-align: center;
+    background-color: var(--whit-gray-color);
+    border-radius: 8px;
+    margin-top: 104px;
+    .yb-link{
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        color: white;
+        }
+    }
+}
+
+.yb-why-choose{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+    .yb-card{
+        border: 1px solid var(--whit-gray-color);
+        max-width: 798.5px;
+        min-height: 378px;
+        padding: 80px;
+    }
+
+    .yb-title{
+        font-size: 26px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 40px;
+    }
+
+    .yb-description{
+        font-size: 18px;
+        color: white;
+        font-weight: 400;
+    }
+
+    .horizontal{
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        gap: 28px;
+    }
+}
+
+.yb-card{
+    border: 1px solid var(--whit-gray-color);
+}
+
+.yb-description{
+    font-weight: 400;
+}
+
+@media screen and (max-width: 1440px) {
+    .yb-our-services{
+    
+    .yb-card{
+        max-width: 426.67px;
+        min-height: 518px;
+        padding: 40px;
+    }
+
+    .yb-title{
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+
+    .yb-description{
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+
+    .yb-btn{
+    padding: 14px 16px;
+    border-radius: 6px;
+    .yb-link{
+        font-size: 14px;
+        }
+    }
+}
+
+    .yb-why-choose{
+
+    .yb-card{
+        max-width: 639.5px;
+        min-height: 292px;
+        padding: 60px;
+    }
+
+    .yb-title{
+        font-size: 20px;
+    }
+
+    .yb-description{
+        font-size: 16px;
+    }
+
+    .horizontal{
+        margin-bottom: 30px;
+        gap: 14px;
+    }
+}
+
+    .yb-icon{
+    border-radius: 8px;
+    width: 70px;
+    height: 70px;
+    padding: 20px;
+    margin-bottom: 30px;
+
+    .yb-img{
+        width: 30px;
+        height: 30px;
+    }
+}
+}
+
+@media screen and (max-width: 992px){
+    .yb-our-services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .yb-card{
+        max-width: 100%;
+        min-height: min-content;
+        padding: 30px;
+
+        .yb-container{
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+    }
+
+    .yb-title{
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+
+    .yb-description{
+        font-size: 14px;
+    }
+}
+
+    .yb-why-choose{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    .yb-card{
+        max-width: 100%;
+        min-height: min-content;
+        padding: 40px 30px;
+    }
+
+    .yb-title{
+        font-size: 20px;
+    }
+
+    .yb-description{
+        font-size: 16px;
+    }
+
+    .horizontal{
+        margin-bottom: 24px;
+    }
+}
+
+    .yb-icon{
+    border-radius: 8px;
+    width: 58px;
+    height: 58px;
+    padding: 16px;
+    margin-bottom: 0px;
+
+    .yb-img{
+        width: 26px;
+        height: 26px;
+    }
+}
+}
