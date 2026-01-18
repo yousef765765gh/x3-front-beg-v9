@@ -46,6 +46,7 @@
     z-index: 100;
     p{
         color: #E6E6E6;
+        font-size: 18px;
         padding-top: 14px ;
     }
 }
@@ -99,6 +100,41 @@
         }
     }
 }
+/* تنسيق شاشات اللابتوب */
+@media screen and (max-width:1440px){
+    .y_container{
+        padding: 100px;
+    }
+    .y_content{
+        font-size: 16px;
+        padding-top: 10px;
+    }
+    .y_sq_icon {
+        padding: 14px 12px;
+    }
+    .y_action_btn{
+        padding: 14px 24px;
+    }
+    .y_container.with-btn{
+        .y_content{
+            .about-y-content{
+                h2 {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    .y_container.no-btn{
+        .y_content{
+            .about-y-content{
+                h2 {
+                    font-size: 38px;
+                }
+            }
+        }
+    }
+}
+
 /* تنسيق شاشات وسط و صغيرة */
 @media screen and (max-width:992px){
     .y_container{

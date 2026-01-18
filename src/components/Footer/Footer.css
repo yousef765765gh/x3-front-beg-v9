@@ -1,26 +1,30 @@
+/* تنسيققات عامة عللى الفوتر */
 footer{
-    padding: 23px 80px;
+    padding: 50px 162px;
     font-size: 18px;
     font-weight: 500;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 50px;
     border-top: 1px solid var(--whit-gray-color);
     color:#E6E6E6;
 }
-
+/* القسم الاول  */
 .first_type_footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
     img {
-        max-width:  120px;
+        max-width:  178px;
+    }
+    .all-page{
+        gap:30px;
     }
 }
-ul {
+    ul {
         display: flex;
         align-items: center;
-        gap:20px;
+
         li{
             list-style: none;
         }
@@ -28,7 +32,23 @@ ul {
 .line{
     border: 1px solid var(--whit-gray-color);
 }
+/* ميديا لشاشات اللابتوب */
+@media screen and (max-width:1440px){
+    footer{
+            padding: 40px 80px;
+            gap: 40px;
+    }
+    .first_type_footer{
+        img {
+            max-width:  120px;
+        }
+        ul {
+        gap: 20px;
+        }
+    }
+}
 
+/* ميديا للشاشات الصغيرة */
 @media screen and (max-width:992px){
     footer{
         padding: 30px 16px;

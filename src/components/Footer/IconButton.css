@@ -1,28 +1,39 @@
+/* تنسيق الايقونات */
 .y-Icon-button{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     border: 1px solid var(--whit-gray-color);
     border-radius: 8px;
-    padding: 14px;
-    font-weight: 400;
+    padding: 24px 14px;
+    font-weight: 500;
     p {
     color: #98989A;
+    font-size: 18px;
     }
-
 }
 .icon {
     background: linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%);
     border: 1px solid;
     border-image-source: linear-gradient(180deg, #2E2E2E 0%, rgba(46, 46, 46, 0) 100%);
-    padding: 16px;
+    padding: 20px;
     border-radius: 8px;
+    margin-right: 14px;
     img {
-        max-width: 20px;
+        max-width: 24px;
     }
 }
-
+/* الايقونات في شاشات اللابتوب */
+@media screen and (max-width:1440px){
+    .y-Icon-button{
+        padding: 20px 10px;
+        p {
+            font-size: 16px;
+        }
+    }
+}
+/* الايقونات في الشاشات الصغيرة */
 @media screen and (max-width:992px){
     .y-Icon-button{
         flex-direction: column;

@@ -34,7 +34,7 @@ const Footer = ({logo,items = []}) => {
         <footer>
             <div className="first_type_footer">
                 <h1><img src={logo} alt="" /></h1>
-                <ul>
+                <ul className="all-page">
                     {items.map((item,index) =>(
                         <li key={index}>{item.content}</li>
                 ))}

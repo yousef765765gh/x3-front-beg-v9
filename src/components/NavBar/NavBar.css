@@ -1,27 +1,29 @@
+/* تنسيق عام على الناف بار */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--whit-gray-color);
-    padding: 23px 80px;
-    
+    padding: 22px 162px; 
+    z-index: 6;
     img {
-        max-width:  120px;
+        max-width:  178px;
     }
     ul {
         display: flex;
-        gap: 46px;
+        gap: 30px;
         li{
             list-style: none;
             a {
                 text-decoration: none;
-                color: #FFFFFF;
+                color: #E6E6E6;
                 font-weight: 500;
                 line-height: 150%;
-                padding: 12px 22px;
+                font-size: 18px;
                 border-radius: 6px;
                 &:hover , &.active{
                 background-color: var(--whit-gray-color);
+                padding: 14px 24px;
                 }
             }
             &:last-child{
@@ -30,7 +32,7 @@ nav {
         }
     }
     .btn-nav{
-        padding: 1% 1.2%;
+        padding: 16px 24px;
         border-radius:8px ;
         background-color: var(--lime-green-color);
         border: none;
@@ -39,6 +41,28 @@ nav {
         display: none;
     }
 }
+/* تنسيق على شاشات اللابتوب */
+@media screen and (max-width:1440px){
+    nav{
+        padding: 23px 80px;
+        img {
+        max-width:  120px;
+        }
+        ul {
+            gap: 24px;
+            li {
+                font-size: 14px;
+                &:hover , &.active{
+                padding: 12px 18px;
+                }
+            }
+        }
+        .btn-nav{
+            padding: 12px 18px;
+        }
+    }
+}
+/* تنسيق على الشاشات الصغيرة */
 @media screen and (max-width:992px){
     nav{
         padding: 48px 16px 23px 16px;
@@ -48,7 +72,8 @@ nav {
             width: 100%;
             flex-direction: column;
             position: absolute;
-            top: -100%;
+            top: 100%;
+            left: 100%;
             left: 0;
             z-index: 4;
             opacity: 0;
@@ -59,6 +84,7 @@ nav {
                 text-align: start;
                 background-color:var(--dark-gray-color);
                 border: 1px solid var(--whit-gray-color);
+                padding: 12px 18px;
                 a {
                     display: block;
                     width: 100%;
@@ -67,18 +93,20 @@ nav {
                     display: block;
                 }
             }
+            /* تنسيق فتح القائمة المخفية ul */
             &.open {
                 transform: translateY(0);
                 width: 100%;
-                top: 100%;
+                left: 0;
                 opacity: 1;
                 visibility: visible;
-                transition: 3s all;
+                transition: 1s all ease-in-out;
             }
         }
         .btn-nav{
         display: none;
-    }
+        }
+        /* تنسيق زر فتح القائمة */
     .btn-nav-media{
         display: block;
         width: 46px;
