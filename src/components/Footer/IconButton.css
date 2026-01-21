@@ -12,6 +12,10 @@
     color: #98989A;
     font-size: 18px;
     }
+    .so-icon{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 .icon {
     background: linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%);
