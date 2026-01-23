@@ -2,7 +2,6 @@
   max-width: 100%;
   color: #fff;
   border: 1px solid var(--whit-gray-color);
-  /* border-right: none; */
   &.grid{
     .DA_Slide {
       display: grid;
@@ -14,7 +13,6 @@
         position: relative;
       .DA_Slide {
         display: flex;
-        transition: transform 0.4s ease;
       }
       .Button-left,.Button-right {
           position: absolute;
@@ -29,7 +27,7 @@
           border-radius: 50%;
           z-index: 1;
           &:hover{
-              
+              background-color: rgb(68, 62, 62);
           }
       }
       .Button-left{
@@ -58,8 +56,6 @@
         }
     }
 }
-
-
 
 @media screen and (min-width:1440px)  {
   .DA_CardsContainer {

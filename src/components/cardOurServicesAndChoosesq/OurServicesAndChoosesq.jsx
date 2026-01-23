@@ -19,5 +19,4 @@ const OurServicesAndChoosesq = ({icon , title , description , showButton, horizo
     )
 }
 
-export default OurServicesAndChoosesq
-// `yb-card ${!showButton ? "no-button" : ""}`
+export default OurServicesAndChoosesq;

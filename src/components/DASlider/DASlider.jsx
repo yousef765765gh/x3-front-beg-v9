@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import SliderCard from "./SliderCard";
 import "./DASlider.css";
 import CardsData from "../../data/TestimonialsCards.json";
 import SliderCardHome from "../Slidercardhome/SliderCardHome";
