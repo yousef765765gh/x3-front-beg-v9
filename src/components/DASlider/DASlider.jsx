@@ -1,70 +1,97 @@
+
 import { useState, useEffect, useRef  } from "react";
+
 import "./DASlider.css";
 import CardsData from "../../data/TestimonialsCards.json";
 import SliderCardHome from "../Slidercardhome/SliderCardHome";
 
 const DASlider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsPerSlide, setItemsPerSlide] = useState(() => {
-    if (window.innerWidth > 1440) return CardsData.length;
-    if (window.innerWidth <= 992) return 1;
-    return 2;
-  });
+  
+  const [offset, setOffset] = useState(0);
+  const [isGrid, setIsGrid] = useState(window.innerWidth > 1440);
+  const [itemsPerSlide, setItemsPerSlide] = useState(
+    window.innerWidth <= 992 ? 1 : 2
+  );
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 1440) setItemsPerSlide(CardsData.length);
-      else if (window.innerWidth <= 992) setItemsPerSlide(1);
-      else setItemsPerSlide(2);
+      const width = window.innerWidth;
+
+      if (width > 1440) {
+        setIsGrid(true);
+        setOffset(0);
+      } else {
+        setIsGrid(false);
+        setItemsPerSlide(width <= 992 ? 1 : 2);
+        setOffset(0);
+      }
     };
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const maxcard = CardsData.length-1
+  const maxOffset = CardsData.length - itemsPerSlide;
 
-  const totalSlides = Math.ceil(CardsData.length / itemsPerSlide);
+  const slideRight = () => {
+    setOffset((prev) => (prev === 0 ? maxOffset : prev - 1));
+  };
 
-  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % totalSlides);
-  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-  const goToSlide = (index) => setCurrentIndex(index);
-
-  const startIndex = currentIndex * itemsPerSlide;
-  let slideItems = CardsData.slice(startIndex, startIndex + itemsPerSlide);
-  if (slideItems.length < itemsPerSlide) {
-    slideItems = [...slideItems, ...CardsData.slice(0, itemsPerSlide - slideItems.length)];
-  }
+  const slideLeft = () => {
+    setOffset((prev) => (prev === maxOffset ? 0 : prev + 1));
+  };
+  const goToSlide = (index) => setOffset(index);
 
   return (
-    <div className={`DA_CardsContainer ${itemsPerSlide === CardsData.length ? "grid" : ""}`}>
+    <div className={`DA_CardsContainer ${isGrid ? "grid" : ""}`}>
       <div className="DA_Slider">
-        {itemsPerSlide !== CardsData.length && (
-          <button className="Button-left" onClick={prevSlide}>&#10094;</button>
+
+        {!isGrid && (
+          <button className="Button-left" onClick={slideRight}>
+            &#10094;
+          </button>
         )}
 
-        <div className="DA_Slide">
-          {slideItems.map((card, index) => (
-            <SliderCardHome key={index} card={card} />
+        <div
+          className="DA_Slide"
+          style={{
+            transform: !isGrid
+              ? `translateX(-${offset * (100 / itemsPerSlide)}%)`: "none",
+            transition: "transform 0.5s ease-in-out",
+          }}
+        >
+          {CardsData.map((card, index) => (
+            <div
+              key={index}
+              style={{
+                flex: !isGrid? `0 0 ${100 / itemsPerSlide}%` : "0 0 auto",
+              }}
+            >
+              <SliderCardHome card={card} />
+            </div>
           ))}
         </div>
 
-        {itemsPerSlide !== CardsData.length && (
-          <button className="Button-right" onClick={nextSlide}>&#10095;</button>
+        {!isGrid && (
+          <button className="Button-right" onClick={slideLeft}>
+            &#10095;
+          </button>
         )}
       </div>
 
-      {itemsPerSlide !== CardsData.length && (
-        <div className="Dots">
-          {Array.from({ length: totalSlides }).map((_, index) => (
+        { !isGrid && (
+          <div className="Dots">
+            {Array.from({ length: maxcard }).map((_, index) => (
             <span
               key={index}
-              className={`Dot ${index === currentIndex ? "active" : ""}`}
+              className={`Dot ${index === offset ? "active" : ""}`}
               onClick={() => goToSlide(index)}
             />
-          ))}
-        </div>
+            ))}
+          </div>
       )}
     </div>
   );
 };
 
 export default DASlider;
-

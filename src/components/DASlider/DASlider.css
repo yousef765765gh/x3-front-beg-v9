@@ -27,7 +27,9 @@
           border-radius: 50%;
           z-index: 1;
           &:hover{
-              background-color: rgb(68, 62, 62);
+            /* background-color: rgb(68, 62, 62); */
+            background-color: var(--whit-green-text-color);
+            color: black;
           }
       }
       .Button-left{
@@ -48,7 +50,6 @@
               border-radius: 50%;
               background: #444;
               cursor: pointer;
-              /* transition: transform 0.3s ease, background 0.3s ease; */
                 &.active {
                     background: var(--whit-green-text-color);
                     transform: scale(1.4);

@@ -1,10 +1,9 @@
 .DA_Card {
-
   max-width: 100%;
   padding: 100px 80px;
   display: flex;
   flex-direction: column;
-  max-height: 100%;
+  height:100% ;
   border: 1px solid var(--whit-gray-color);
   border-left: none;
   h2{
@@ -17,7 +16,6 @@
     font-weight: 400;
     font-size: 18px;
     margin-top: 24px;
-    /* margin-bottom: 40px; */
     line-height: 150%;
     color: rgba(230, 230, 230, 1);
   }
@@ -25,12 +23,12 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        /* width: min-content; */
         max-width: 100%;
         height: 103px;
         border-radius: 8px;
         border: 1px solid var(--whit-gray-color);
         padding: 21.5px 20px;
+        margin-top: auto;
         .DA_Img{
             width: 60px;
             height: 60px;
@@ -38,7 +36,6 @@
             object-fit: cover;
         }
         .DA_Info{
-            /* max-width: 100%; */
             h3{
                 font-weight: 500;
                 font-size: 20px;
@@ -80,14 +77,15 @@
 @media screen and (max-width:1440px)  {
     .DA_Card{
         padding: 80px 60px;
-        width: 50%;
+        width:100%;
+        /* height: 485px; */
         h2{
             font-size: 20px;
             min-height: 80px;
         }
         p{
             font-size: 16px;
-            padding-bottom: 30px !important;
+            padding-bottom: 35px !important;
             flex-grow: 1;
         }
         .ContentCard{
@@ -125,9 +123,10 @@
 
 
 @media screen and (max-width:992px) {
-     .DA_Card{
+        .DA_Card{
         padding: 40px 24px;
         width: 100%;
+        height: auto;
         h2{
             font-size: 18px;
             min-height: 54px;
