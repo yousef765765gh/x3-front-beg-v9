@@ -1,7 +1,9 @@
+import DAForm from "../components/DAForm/DAForm"
+
 const Contact = () => {
     return (
         <div>
-            <h2>hello contact_us</h2>
+            <DAForm />
         </div>
     )
 }

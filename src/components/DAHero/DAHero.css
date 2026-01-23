@@ -1,3 +1,8 @@
+.container-wrapper {
+    margin: 0 auto;
+    padding: 0 161px;
+}
+
 .DAHero-container {
     position: relative;
     height: 100vh;
@@ -6,55 +11,52 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("/assets/img/heroSection p Home.png");
-    background-repeat: no-repeat;
-    background-position: center 300px;
+    background-image: url("/assets/img/heroSection p Home.png"), url("/assets/img/Square-effect.png");
+    background-repeat: no-repeat, repeat;
+    background-position: center 200px;
     background-size: auto, auto;
     object-fit: cover;
-}
-
-.text1 {
-    margin: 0 auto;
-    gap: 40px;
-
+    border: 1px solid #262626;
 }
 
 .title-atsqure h1 {
+    position: relative;
+    top: -60px;
     width: 50%;
     margin: 0 auto;
     font-family: Barlow;
     font-weight: 600;
     font-size: 68px;
     text-align: center;
-    margin-top: -60px;
+    margin-bottom: -20px;
 }
 
 .title-atsqure p {
     opacity: 1;
     border-radius: 12px;
-    height: 98px;
-    padding: 0px 40px;
+    padding: 0px 10px;
     border-width: 1px;
-    border: 3px solid#1A1A1A;
+    border: 1px solid #262626;
     margin: 0 auto;
-    margin-top: 40px;
     font-size: 22px;
     backdrop-filter: blur(12px);
-    box-shadow: 0 2px 2px #00000088;
+    margin-bottom: 30px;
+
 
     span {
-        padding: 12px 20px;
+        padding: 12px 10px;
         font-family: 'Barlow';
         font-size: 22px;
         border-radius: 8px;
-        box-shadow: 0 4px 4px #00000088;
-        color: Grey/15;
         line-height: 85px;
+        border: 1px solid #262626;
+        background-color: #262626;
+
     }
 }
 
 .Dabtns {
-    margin-top: 50px;
+    margin-top: -30px;
 
     .DABtn {
         margin-right: 13px;
@@ -65,7 +67,7 @@
         backdrop-filter: blur(12px);
         border-radius: 10px;
         text-decoration: none;
-        border: 1px solid #00000088;
+        border: 1px solid #262626;
         color: #fff;
     }
 
@@ -84,15 +86,17 @@
 
 @media (max-width: 1440px) {
 
+    .container-wrapper {
+        padding: 0 80px;
+    }
+
     .DAHero-container {
-        padding-top: 40px;
         background-position: center 260px;
     }
 
     .title-atsqure h1 {
-        width: 65%;
         font-size: 60px;
-        margin-top: -40px;
+        margin-top: 112px;
     }
 
     .title-atsqure p {
@@ -106,11 +110,6 @@
         line-height: 75px;
         font-size: 20px;
     }
-
-    .Dabtns {
-        margin-top: 40px;
-    }
-
     .Dabtns .DABtn,
     .Dabtns .DAGreenBtn {
         padding: 16px 24px;
@@ -121,6 +120,10 @@
 
 @media (max-width: 992px) {
 
+    .container-wrapper {
+        padding: 0 16px;
+    }
+
     .DAHero-container {
         padding-top: 30px;
         background-position: center 220px;
@@ -129,35 +132,49 @@
     .title-atsqure h1 {
         width: 90%;
         font-size: 44px;
-        margin-top: -20px;
+        margin-top: 80px;
     }
 
     .title-atsqure p {
         height: auto;
         padding: 16px 24px;
         font-size: 18px;
-        margin-top: 28px;
+        color: #98989A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        text-align: center;
     }
 
     .title-atsqure p span {
-        display: block;
         line-height: normal;
-        padding: 10px 16px;
+        padding: 10px 10px;
         font-size: 18px;
+        border: none;
+        background-color: var(--dark-gray-color);
+        white-space: nowrap;
+        background: transparent;
+            backdrop-filter: none;
     }
 
     .Dabtns {
         display: flex;
-        flex-direction: column;
         gap: 16px;
         margin-top: 32px;
     }
 
     .Dabtns .DABtn,
     .Dabtns .DAGreenBtn {
-        width: 100%;
         text-align: center;
         padding: 16px;
         font-size: 16px;
+        margin-top: -29px;
     }
+    .DAHero-container {
+        background-position: center;
+        object-fit: contain;
+    }
+
 }

@@ -1,8 +1,9 @@
 import OurServices from "../components/OurServices/OurServices"
 import WhyChooseSq from "../components/OurServices/WhyChooseSq"
-import DATestimonialsSection from "../components/DATestimonialsSection/DATestimonialsSection"
+// import DATestimonialsSection from "../components/DATestimonialsSection/DATestimonialsSection"
 import DAHero from "../components/DAHero/DAHero"
 import DATrusted from "../components/DATrustedLogos/DATrustedLogos"
+
 
 const Home = () => {
     return (
@@ -11,7 +12,7 @@ const Home = () => {
             <DATrusted/>
             <OurServices />
             <WhyChooseSq />
-            <DATestimonialsSection />
+            {/* <DATestimonialsSection /> */}
         </>
     )
 }
