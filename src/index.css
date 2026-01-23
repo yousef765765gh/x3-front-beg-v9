@@ -2,18 +2,27 @@
 
 /* inter  */
 @import url("https://fonts.googleapis.com/css2?family=Bitcount+Single+Ink:wght@100..900&family=Gilda+Display&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic+Expanded+One&family=Urbanist:wght@100..900&display=swap");
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Barlow", sans-serif;
+
+
 }
-body{
-  background-color:var(--dark-gray-color) ;
+
+body {
+  background-color: var(--dark-gray-color);
 }
-:root{
-    --dark-gray-color:#191919;  /*لون الخلفية */
-    --whit-gray-color:#262626; /*لون  البوردر*/
-    --lime-green-color:#9EFF00; /*لون الازرار و الايقونات*/
-    --whit-green-text-color:#D8FF99; /*لون  بعض النصوص*/
+
+:root {
+  --dark-gray-color: #191919;
+  /*لون الخلفية */
+  --whit-gray-color: #262626;
+  /*لون  البوردر*/
+  --lime-green-color: #9EFF00;
+  /*لون الازرار و الايقونات*/
+  --whit-green-text-color: #D8FF99;
+  /*لون  بعض النصوص*/
 }

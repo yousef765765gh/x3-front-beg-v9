@@ -1,0 +1,181 @@
+.container-wrapper {
+    margin: 0 auto;
+    padding: 0 161px;
+    /* height: 100vh; */
+}
+
+.DAHero-container {
+    position: relative;
+    height: 100vh;
+    padding-top: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/assets/img/heroSection p Home.png"), url("/assets/img/Square-effect.png");
+    background-repeat: no-repeat, repeat;
+    background-position: center 200px;
+    background-size: auto, auto;
+    object-fit: cover;
+    border: 1px solid #262626;
+}
+
+.title-atsqure h1 {
+    position: relative;
+    top: -60px;
+    width: 50%;
+    margin: 0 auto;
+    font-family: Barlow;
+    font-weight: 600;
+    font-size: 68px;
+    text-align: center;
+    margin-bottom: -20px;
+}
+
+.title-atsqure p {
+    opacity: 1;
+    border-radius: 12px;
+    padding: 0px 10px;
+    border-width: 1px;
+    border: 1px solid #262626;
+    margin: 0 auto;
+    font-size: 22px;
+    backdrop-filter: blur(12px);
+    margin-bottom: 30px;
+
+
+    span {
+        padding: 12px 10px;
+        font-family: 'Barlow';
+        font-size: 22px;
+        border-radius: 8px;
+        line-height: 85px;
+        border: 1px solid #262626;
+        background-color: #262626;
+
+    }
+}
+
+.Dabtns {
+    margin-top: -30px;
+
+    .DABtn {
+        margin-right: 13px;
+        padding: 18px 28px;
+        font-size: 18px;
+        font-weight: 500;
+        font-family: 'Barlow';
+        backdrop-filter: blur(12px);
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid #262626;
+        color: #fff;
+    }
+
+    .DAGreenBtn {
+        padding: 18px 28px;
+        font-size: 18px;
+        font-weight: 500;
+        font-family: Barlow;
+        border-radius: 10px;
+        text-decoration: none;
+        backdrop-filter: blur(12px);
+        background-color: var(--lime-green-color);
+        color: var(--whit-gray-color);
+    }
+}
+
+@media (max-width: 1440px) {
+
+    .container-wrapper {
+        padding: 0 80px;
+    }
+
+    .DAHero-container {
+        background-position: center 260px;
+    }
+
+    .title-atsqure h1 {
+        font-size: 60px;
+        margin-top: 112px;
+    }
+
+    .title-atsqure p {
+        height: 88px;
+        font-size: 20px;
+        margin-top: 32px;
+        padding: 0 32px;
+    }
+
+    .title-atsqure p span {
+        line-height: 75px;
+        font-size: 20px;
+    }
+    .Dabtns .DABtn,
+    .Dabtns .DAGreenBtn {
+        padding: 16px 24px;
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    .container-wrapper {
+        padding: 0 16px;
+    }
+
+    .DAHero-container {
+        padding-top: 30px;
+        background-position: center 220px;
+    }
+
+    .title-atsqure h1 {
+        width: 90%;
+        font-size: 44px;
+        margin-top: 80px;
+    }
+
+    .title-atsqure p {
+        height: auto;
+        padding: 16px 24px;
+        font-size: 18px;
+        color: #98989A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .title-atsqure p span {
+        line-height: normal;
+        padding: 10px 10px;
+        font-size: 18px;
+        border: none;
+        background-color: var(--dark-gray-color);
+        white-space: nowrap;
+        background: transparent;
+            backdrop-filter: none;
+    }
+
+    .Dabtns {
+        display: flex;
+        gap: 16px;
+        margin-top: 32px;
+    }
+
+    .Dabtns .DABtn,
+    .Dabtns .DAGreenBtn {
+        text-align: center;
+        padding: 16px;
+        font-size: 16px;
+        margin-top: -29px;
+    }
+    .DAHero-container {
+        background-position: center;
+        object-fit: contain;
+    }
+
+}

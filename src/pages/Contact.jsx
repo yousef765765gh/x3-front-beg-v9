@@ -1,9 +1,12 @@
-import Faq from "../components/FrequentlyAskedQuestions/Faq"
+
+import DAForm from "../components/DAForm/DAForm"
+import WhyChooseSq from "../components/WhyChooseSq/WhyChooseSq"
 
 const Contact = () => {
     return (
         <>
-            <Faq/>
+            <DAForm />
+            <WhyChooseSq />
         </>
     )
 }
