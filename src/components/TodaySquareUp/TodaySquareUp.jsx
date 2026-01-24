@@ -14,7 +14,7 @@ const TodaySquareUp = ({icon , title , description , title2 , description2 , but
             </div>
             <div className='yb-bottom-section'>
                 <h3 className='yb-title-today2'>{title2}</h3>
-                <div className="yb-container"><p className='yb-description-today2'>{description2}</p></div>
+                <div className="yb-container-taday"><p className='yb-description-today2'>{description2}</p></div>
                 <Link to={"/Contact"} className="yb-btn-today">{button}</Link>
             </div>
         </div>
