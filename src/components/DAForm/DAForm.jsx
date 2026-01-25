@@ -115,14 +115,18 @@ const MmContactUsForm = ({ editingItem, onSave }) => {
                     <label>Why are you contacting us?</label>
                     <div className="resons">
                         {["Web Design", "Collaboration", "Mobile App Design", "Others"].map((reson, i) => (
-                            <label key={i}>
-                                <input
-                                    type="checkbox"
-                                    className="reson-checkbox"
-                                    value={reson}
-                                    checked={resons.includes(reson)}
-                                    onChange={handleCheckboxChange}
-                                />
+                        <label 
+                            key={i} 
+                            htmlFor={`checkbox-${i}`}
+                        >
+                        <input
+                            id={`checkbox-${i}`} 
+                            type="checkbox"
+                            className="reson-checkbox"
+                            value={reson}
+                            checked={resons.includes(reson)}
+                            onChange={handleCheckboxChange}
+                        />
                                 {reson}
                             </label>
                         ))}

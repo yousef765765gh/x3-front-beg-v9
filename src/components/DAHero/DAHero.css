@@ -32,8 +32,6 @@
     font-size: 68px;
     text-align: center;
     color: #FFFFFF;
-
-
 }
 .DA_Hero .DA_Paragraph span {
     padding: 8px 10px;
@@ -50,7 +48,7 @@
 
 .DA_Hero .DA_Btn {
     text-decoration: none;
-    font-family: barlow5;
+    /* font-family: barlow5; */
     font-size: 18px;
     padding: 18px 28px;
     border: 1px solid var(--whit-gray-color);
