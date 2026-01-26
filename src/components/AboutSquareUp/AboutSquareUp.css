@@ -40,20 +40,41 @@
         background-position: center;
     }
 
-    .yb_TopheroBackground{
-        position: absolute;
-        width: 100%;
-        mix-blend-mode: overlay;
-        height: 100%;
-        background-image: url('assets/img/backgroundsection.png');
-        opacity: 0.6;
-        z-index: 3;
-    }
+    /* لنسيق صورة الخلفية  */
+.yb_heroBackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: color;
+    inset: 0;
+    /* سحب الوان الصورة و جعلها داكنة */
+    filter: grayscale(94%) brightness(0.2);
+    opacity: 0.88;
+    z-index: 1;
+}
+/* وضع صورة  الثانية و وضع شفافية */
+.yb_TopheroBackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/img/backgroundsection.png');
+    opacity: 0.6;
+    z-index: 3;
+}
+
+
 /* تنسيق الايقونة داخل الصورة */
 .yb-icon-wrapper{
         display: flex;
         align-items: center;
         justify-content: center;
+        filter: drop-shadow(0 0 90px rgba(255,255,255,0.6));
         position: relative;
         width: 150px;
         height: 150px;
@@ -64,7 +85,7 @@
         z-index: 16;
         box-shadow: 0px 0px 23px 16px #FFFFFF80 inset;
         background: var(--lime-green-color);
-        background-size: contain;
+        background-size: contain;      
         width: 150.7px;
         height: 150px;
         .yb-icon-squareUp{
@@ -75,13 +96,17 @@
 
     /* تنسيق الخطوط داخل الصورة*/
     .yb-lines{
+        
         .yb-line{
             position: absolute;
+            
             top: 50%;
             left: 50%;
             width: 100%;
             height: 2px;
             border: none;
+            transform: translate(-50%, -50%);
+            z-index: 16;
             background: linear-gradient(90deg, transparent 0%, rgba(172, 255, 36, 0.3) 20%, rgba(172, 255, 36, 0.8) 50%, rgba(172, 255, 36, 0.3) 80%, transparent 100%);
         }
 

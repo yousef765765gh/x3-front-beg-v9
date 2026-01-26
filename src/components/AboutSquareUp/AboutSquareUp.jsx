@@ -17,10 +17,10 @@ const AboutSquareUp = ({title , description , bgImage , icon}) => {
                     <h2 className="yb-squareUp-title">{title}</h2>
                     <p className="yb-squareUp-description">{description}</p>
                 </div>
-                <div className="yb-about-image"
-                style={{backgroundImage:`url(${bgImage})`}}
-                ><div className="yb-lines">
-                <div className="yb_TopheroBackground"></div>
+                <div className="yb-about-image">
+                    <div className="yb_heroBackground" style={{backgroundImage:`url(${bgImage})`}}></div>
+                    <div className="yb_TopheroBackground"></div>
+                    <div className="yb-lines">
                         <div className="yb-line yb-line1"></div>
                         <div className="ybline yb-line2"></div>
                         <div className="yb-line yb-line3"></div>
