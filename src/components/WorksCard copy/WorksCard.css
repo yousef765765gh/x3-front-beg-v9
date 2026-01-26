@@ -1,0 +1,142 @@
+.font {
+    font-weight: 500;
+}
+.f-w {
+    font-weight: 400;
+}
+.l-h {
+    line-height: 150%;
+}
+.p-50 {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.p-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.p-14 {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+.p-30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.b-g {
+    background-color: rgba(38, 38, 38, 1);
+    ;
+}
+.work-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* العنوان فوق الصورة */
+.work-title {
+    color: rgba(152, 152, 154, 1);
+    border-bottom: 1px solid var(--whit-gray-color);
+    font-size: 26px;
+    line-height: 100%;
+}
+.img-wrraper img {
+    width: 100%;
+}
+/* الاسم */
+.work-name {
+    display: block;
+    color: rgba(230, 230, 230, 1);
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+/* حاوية الرابط + السهم */
+.link-row {
+    display: flex;
+    justify-content: space-between;
+}
+/* الرابط */
+.link {
+    border-radius: 8px;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgba(152, 152, 154, 1);
+}
+/* مربع بقلبو السهم*/
+.arrow-box {
+    width: 54px;
+    height: 54px;
+    border-radius: 8px;
+    margin-top: -21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lime-green-color);
+}
+/* ايقونة السهم */
+.arrow-box svg {
+    width: 34px;
+    height: 34px;
+}
+.work-desc {
+    font-family: Inter;
+    font-size: 18.5px;
+    color: rgba(152, 152, 154, 1);
+    padding-bottom: 100px;
+}
+@media (max-width: 1440px) {
+    .work-title {
+        padding: 24px 40px;
+        font-size: 20px;
+    }
+    .img-wrraper img {
+        padding: 24px 40px;
+    }
+    .card-bottom {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .work-name {
+        font-size: 18px;
+    }
+    .link {
+        font-size: 16px;
+        padding: 8px 12px;
+        border-radius: 6px;
+    }
+    .arrow-box {
+        width: 46px;
+        height: 46px;
+        border-radius: 6px;
+    }
+    .arrow-box svg {
+        width: 26px;
+        height: 26px;
+    }
+    .work-desc {
+        padding: 24px 40px;
+        font-size: 16.5px;
+        padding-bottom: 80px;
+    }
+}
+@media (max-width: 992px) {
+    .work-title {
+        padding: 20px 24px;
+    }
+    .img-wrraper img {
+        padding: 20px 24px;
+    }
+    .card-bottom {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .link {
+        font-size: 14px;
+        padding: 10px 8px;
+    }
+    .arrow-box {
+        margin-top: -9px;
+    }
+    .work-desc {
+        padding: 20px 24px;
+        font-size: 13.9px;
+        padding-bottom: 40px;
+    }
+}
