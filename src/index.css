@@ -8,14 +8,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Barlow", sans-serif;
-
-
 }
 
 body {
   background-color: var(--dark-gray-color);
   padding: 0 161px;
 }
+
 :root {
   --dark-gray-color: #191919;
   /*لون الخلفية */
@@ -30,7 +29,6 @@ body {
   body{
     padding: 0 80px;
   }
-
 }
 @media screen and (max-width:992px){
   body{

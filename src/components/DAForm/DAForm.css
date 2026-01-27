@@ -129,7 +129,7 @@
             flex-direction: column;
             gap: 20px;
             padding: 24px 40px;
-textarea {
+            textarea {
                 border: none;
                 outline: none;
                 background: none;
@@ -174,7 +174,6 @@ textarea {
     gap: 30px;
     padding: 50px 30px;
     border: 1px solid #262626
-
 }
 
 .da-contact-contactIcon {
@@ -185,7 +184,6 @@ textarea {
     padding: 18px 24px;
     background-color: var(--whit-gray-color);
     border-radius: 8px;
-
     .da_font_size_weight3 {
         color: #656567;
         font-weight: 500;
@@ -210,18 +208,15 @@ textarea {
     height: 154px;
     background-color: var(--whit-gray-color);
 }
-
 .da-contact-down-footer-buttom {
     display: flex;
     align-items: center;
     padding: 50px 0px;
-
     p {
         color: 656567;
         font-weight: 500;
         font-size: 22px;
     }
-
     .day {
         margin-left: 14px;
         padding: 25px 30px;
@@ -229,7 +224,6 @@ textarea {
         border-radius: 6px;
     }
 }
-
 .da-contact-down-footer-stay-Connected {
     max-width: 402px;
     height: 92px;
@@ -256,15 +250,12 @@ textarea {
         border-radius: 8px;
         border: 1px solid linear-gradient(to bottom, var(--lime-green-color) 0%, transparent 100%);
     }
-
     .da-contact-socialIcon {
         width: 24px;
         height: 19.5px;
         background-color: transparent;
     }
 }
-
-
 
 @media screen and (max-width:1440px) {
     .form-container {
