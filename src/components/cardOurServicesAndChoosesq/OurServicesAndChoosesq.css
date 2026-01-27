@@ -18,14 +18,22 @@
 .yb-description{
         font-size: 18px;
         color:#E6E6E6;
+        flex-grow: 1;
     }
 .yb-title{
     color: white;
 }
+
+/* .yb-container{
+    flex-grow: 1;
+} */
 /* تنسيق الكرت بوجود الزر */
 .yb-card{
     border: 1px solid var(--whit-gray-color);
     width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     padding: 50px;
     .yb-title{
         font-size: 30px;
