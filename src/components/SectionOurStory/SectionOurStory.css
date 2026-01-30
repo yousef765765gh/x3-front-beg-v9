@@ -1,11 +1,11 @@
 .our-story {
     max-width: 100%;
     height: max-content;
-    border: 1px solid var(--whit-gray-color);
-    border-top: none !important;
+    /* border: 1px solid var(--whit-gray-color); */
+    /* border-top: none !important; */
     overflow:hidden;
     .ourstory-title{
-        padding:0  50px;
+        padding: 100px  50px;
         width: 100%;
     }
     .our-story-card{
@@ -13,8 +13,20 @@
         grid-template-columns: repeat(2 , 1fr);
     }
 }
+
 @media screen and (max-width:992px){
     .our-story{
+        .ourstory-title{
+            padding: 80px 50px;
+        }
+    }
+}
+
+@media screen and (max-width:992px){
+    .our-story{
+        .ourstory-title{
+            padding: 40px 24px;
+        }
         .our-story-card{
             grid-template-columns: 1fr;
         }

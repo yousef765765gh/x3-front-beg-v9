@@ -1,4 +1,5 @@
 .DA-Container{
+    margin: 0 161px;
     position: relative;
     &::before {
     content: "";
@@ -58,6 +59,7 @@
             align-items: center;
             gap: 13px;
             margin-top: 50px;
+            
             .DA_Btn{
                 text-decoration: none;
                 font-size: 18px;
@@ -70,6 +72,9 @@
                 color: #fff;
                 cursor: pointer;
                 transition: 0.2s all;
+                &:hover{
+                    background-color:#5b565633 ;
+                }
             }
             .DAGreen_Btn{
                 text-decoration: none;
@@ -83,6 +88,9 @@
                 color: black;
                 cursor: pointer;
                 transition: 0.2s all;
+                &:hover{
+                    background-color: #b6f453;
+                }
             }
         }
 
@@ -91,6 +99,7 @@
 
 @media screen and (max-width: 1440px) {
     .DA-Container {
+        margin: 0 80px;
         .DA_Hero{
             background-position: center 106%;
             h1{
@@ -126,12 +135,10 @@
 }
 @media screen and (max-width: 992px) {
     .DA-Container {
+        margin: 0 16px;
         .DA_Hero {
             background-size: 239% 43%;
             padding: 80px 16px 205px 16px;
-            padding-left: 0;
-            padding-right: 0;
-            margin: 0 16px;
             border: none;
             h1{
                 max-width: 100%;

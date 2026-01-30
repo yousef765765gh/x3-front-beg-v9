@@ -36,11 +36,13 @@
     }
 }
 .answer {
-    transition: opacity 0.3s ease;
     opacity: 0;
     color: rgba(255, 255, 255, 1);
     line-height: 150%;
     font-size: 18px;
+    &:hover{
+            transition: 1s all;
+        }
 }
 .content {
     flex: 1;
@@ -55,6 +57,7 @@
     }
 }
 .faq-card.open {
+    
     .num-bg {
         align-self: self-start;
         .number {
@@ -76,6 +79,7 @@
     }
     .answer {
         opacity: 1;
+        
     }
 }
 .answer_mobile {

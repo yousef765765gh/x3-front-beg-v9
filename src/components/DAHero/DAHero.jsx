@@ -13,7 +13,7 @@ const DAHero = ({  title, btn1, btn2 }) => {
                 </div>
                 <div className="DA_Btns">
                     <Link to="/work" className="DA_Btn">{btn1}</Link>
-                    <Link to="/contact-us" className="DAGreen_Btn">{btn2}</Link>
+                    <Link to="/contact_us" className="DAGreen_Btn">{btn2}</Link>
                 </div>
             </div>
         </div>

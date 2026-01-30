@@ -78,6 +78,7 @@ const DAForm = ({ editingItem, onSave }) => {
 
     return (
         <>
+        <section>
         <AboutHeroSection
                 hasButton={false}
                 imageBackground={heroform}
@@ -189,6 +190,7 @@ const DAForm = ({ editingItem, onSave }) => {
                 </div>
             </div>
         </div>
+        </section>
         </>
     );
 };

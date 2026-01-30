@@ -1,8 +1,8 @@
 .at-square-up{
     max-width: 100%;
     height: max-content;
-    border: 1px solid var(--whit-gray-color);
-    border-top: none !important;
+    /* border: 1px solid var(--whit-gray-color); */
+    /* border-top: none !important; */
     overflow:hidden;
     .at-squar-card{
         display: grid;

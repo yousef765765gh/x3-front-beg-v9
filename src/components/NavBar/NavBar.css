@@ -1,13 +1,11 @@
 /* تنسيق عام على الناف بار */
 nav {
+    padding: 22px 161px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--whit-gray-color);
-    padding: 22px 0; 
     z-index: 6;
-    /* position: fixed; */
-    width: 100%;
     background-color: var(--dark-gray-color);
     img {
         max-width:  178px;
@@ -39,6 +37,9 @@ nav {
         border-radius:8px ;
         background-color: var(--lime-green-color);
         border: none;
+        &:hover{
+            background-color: var(--whit-green-text-color);
+        }
     }
     .btn-nav-media{
         display: none;
@@ -47,7 +48,7 @@ nav {
 /* تنسيق على شاشات اللابتوب */
 @media screen and (max-width:1440px){
     nav{
-        padding: 23px 0;
+        padding: 23px 80px;
         img {
         max-width:  120px;
         }
@@ -68,7 +69,7 @@ nav {
 /* تنسيق على الشاشات الصغيرة */
 @media screen and (max-width:992px){
     nav{
-        padding: 48px 0 23px 0;
+        padding: 48px 16px 23px 16px;
         position: relative;
         z-index: 10;
         ul {

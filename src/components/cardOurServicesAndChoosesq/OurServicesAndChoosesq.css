@@ -3,7 +3,6 @@
 .yb-icon{
     border-radius: 10px;
     width: 88px;
-    height: 88px;
     border: 1px solid var(--whit-gray-color);
     padding: 24px;
     margin-bottom: 40px;
@@ -24,9 +23,7 @@
     color: white;
 }
 
-/* .yb-container{
-    flex-grow: 1;
-} */
+
 /* تنسيق الكرت بوجود الزر */
 .yb-card{
     border: 1px solid var(--whit-gray-color);
@@ -35,6 +32,9 @@
     display: flex;
     flex-direction: column;
     padding: 50px;
+    &:hover{
+        border: 1px solid var(--lime-green-color);
+    }
     .yb-title{
         font-size: 30px;
         font-weight: 600;
@@ -47,6 +47,9 @@
     background-color: var(--whit-gray-color);
     border-radius: 8px;
     margin-top: 104px;
+    &:hover{
+        background-color: #201d1d;
+    }
     .yb-link{
         text-decoration: none;
         text-align: center;
@@ -59,6 +62,9 @@
     .yb-card.no-button{
         border: 1px solid var(--whit-gray-color);
         padding: 80px;
+        &:hover{
+            border: 1px solid var(--lime-green-color);
+        }
         .yb-title{
             font-size: 26px;
             font-weight: 500;
@@ -116,7 +122,6 @@
 .yb-icon{
     border-radius: 8px;
     width: 70px;
-    height: 70px;
     padding: 20px;
     margin-bottom: 30px;
     .yb-img{
@@ -162,7 +167,6 @@
     .yb-icon{
         border-radius: 8px;
         width: 58px;
-        height: 58px;
         padding: 16px;
         margin-bottom: 0px;
         .yb-img{

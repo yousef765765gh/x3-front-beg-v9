@@ -11,23 +11,22 @@ const logos = [
 
 export default function LogosBar() {
     return (
-    <div className="logos-wrapper">
-    <p className="logos-title">Trusted by 250+ Companies</p>
-
-    <div className="logos-box">
-        
-            {logos.map((logo) => (
-                <div key={logo.name} className="logos-container">
-                <img
-                    src={logo.src}
-                    alt={logo.name}
-                    className="logo"
-                />
-                </div>
-            ))}
-        
-    </div>
-</div>
+        <section className="logos-wrapper">
+            <p className="logos-title">Trusted by 250+ Companies</p>
+            <div className="logos-box">
+                
+                    {logos.map((logo) => (
+                        <div key={logo.name} className="logos-container">
+                        <img
+                            src={logo.src}
+                            alt={logo.name}
+                            className="logo"
+                        />
+                        </div>
+                    ))}
+                
+            </div>
+        </section>
 
     );
 }

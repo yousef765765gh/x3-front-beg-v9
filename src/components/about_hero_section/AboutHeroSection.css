@@ -67,9 +67,15 @@
     border-radius: 8px;
     background-color: #9EFF00;
     font-size: 18px;
+    border: none;
+    &:hover{
+        box-shadow: 0 10px 20px  var(--whit-green-text-color);
+    }
 }
 /* اختلاف تنسيق المحتوى حسب وجود الزر و لايقونة */
 .y_container.with-btn{
+    margin: 0 161px;
+    
     .y_content{
         .about-y-content{
             h2 {
@@ -117,6 +123,7 @@
         padding: 14px 24px;
     }
     .y_container.with-btn{
+        margin: 0 80px;
         .y_content{
             .about-y-content{
                 h2 {
@@ -158,6 +165,7 @@
         font-size: 14px;
     }
     .y_container.with-btn{
+        margin: 0 16px;
         .y_content{
             .about-y-content{
                 h2 {

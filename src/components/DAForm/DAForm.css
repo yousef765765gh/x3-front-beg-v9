@@ -162,6 +162,9 @@
             font-weight: 500;
             font-size: 18px;
             color: black;
+            &:hover{
+                background-color: var(--whit-green-text-color);
+            }
         }
     }
 }

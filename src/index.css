@@ -12,9 +12,11 @@
 
 body {
   background-color: var(--dark-gray-color);
+  /* padding: 0 161px; */
+}
+section{
   padding: 0 161px;
 }
-
 :root {
   --dark-gray-color: #191919;
   /*لون الخلفية */
@@ -26,12 +28,18 @@ body {
   /*لون  بعض النصوص*/
 }
 @media screen and (max-width:1440px){
-  body{
+  /* body{
     padding: 0 80px;
-  }
+  } */
+section{
+  padding: 0 161px;
+}
 }
 @media screen and (max-width:992px){
   body{
     padding: 0 16px;
   }
+  section{
+  padding: 0 16px;
+}
 }

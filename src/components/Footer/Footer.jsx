@@ -1,6 +1,6 @@
-import IconButton from "./IconButton"
+import IconButton from "../IconButton/IconButton"
 import "./Footer.css"
-import Secound_type_footer from "./Secound_type_footer"
+import Secound_type_footer from "../secound-type-footer/Secound_type_footer"
 const Footer = ({logo,items = []}) => {
     const iconbutton =[
         {

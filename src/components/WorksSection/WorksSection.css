@@ -17,6 +17,9 @@
     border-radius: 8px;
     color: rgba(152, 152, 154, 1);
     background-color: var(--whit-gray-color);
+    &:hover{
+        background-color: var(--whit-green-text-color);
+    }
 }
 
 @media (max-width: 1440px) {

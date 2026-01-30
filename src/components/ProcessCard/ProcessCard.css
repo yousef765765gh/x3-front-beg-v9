@@ -2,12 +2,16 @@
 .process-card {
     width: 100%; 
     border: 1px solid var(--whit-gray-color);
-    border-bottom: none;
-    border-right: none;
     display: flex;
     flex-direction: column;
     gap: 50px;
     padding: 100px 50px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    &:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px var(--whit-green-text-color);
+    background-color: var(--dark-gray-color);
+    }
     .number-card{
         display: flex;
         align-items: center;
@@ -34,6 +38,7 @@
     }
     .text-card{
         p{
+            font-family: "Inter";
             color: rgba(152, 152, 154, 1);
             font-size: 18px;
             line-height: 150%;
@@ -96,3 +101,5 @@
     }
 }
 /* finsh */
+
+

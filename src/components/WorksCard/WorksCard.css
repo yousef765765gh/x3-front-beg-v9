@@ -29,6 +29,9 @@
 }
 .work-card {
     border: 1px solid rgba(255, 255, 255, 0.1);
+    &:hover{
+        box-shadow: 0 5px 10px  var(--whit-green-text-color);
+    }
 }
 /* العنوان فوق الصورة */
 .work-title {
@@ -58,6 +61,10 @@
     font-size: 20px;
     text-decoration: none;
     color: rgba(152, 152, 154, 1);
+    &:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 1px 3px  var(--whit-green-text-color);
+    }
 }
 /* مربع بقلبو السهم*/
 .arrow-box {

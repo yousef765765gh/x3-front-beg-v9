@@ -6,6 +6,12 @@
   height:100% ;
   border: 1px solid var(--whit-gray-color);
   border-left: none;
+  &:hover{
+    background-color: var(--dark-gray-color);
+    box-shadow: 0 10px 10px  var(--whit-green-text-color);
+    transform: translateY(-10px);
+    transition: 0.5s all;
+  }
   h2{
     color: var(--whit-green-text-color);
     font-weight: 500;
