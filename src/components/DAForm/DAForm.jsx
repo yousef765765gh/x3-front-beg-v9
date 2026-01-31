@@ -4,11 +4,13 @@ import AboutHeroSection from "../about_hero_section/AboutHeroSection";
 import heroform from "/assets/img/about us section Home+hero work.png"
 
 const DAForm = ({ editingItem, onSave }) => {
+     // Form state variables
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [yourMessage, setYourMessage] = useState("");
     const [resons, setResons] = useState([]);
 
+      // Populate form fields when editing an existing item
     useEffect(() => {
         if (editingItem) {
             setFullName(editingItem.fullName , "");
@@ -33,6 +35,7 @@ const DAForm = ({ editingItem, onSave }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+          // Create a new form entry
         const newItem = {
             id: editingItem ? editingItem.id : Date.now(),
             fullName,
@@ -57,13 +60,13 @@ const DAForm = ({ editingItem, onSave }) => {
         setYourMessage("");
         setResons([]);
     };
-
+// Top contact icons (email, phone, location)
     const topIcons = [
         { name: "hello@squareup.com", icon: "assets/img/Icon messag footer.svg" },
         { name: "+91 91813 23 2309", icon: "assets/img/Icon phone footer.svg" },
         { name: "Get Location", icon: "assets/img/Icon  loction footer.svg" },
     ];
-
+  // Bottom social media icons
     const bottomIcons = [
         { name: "Facebook", icon: "assets/img/Icon facbook footer.svg", url: "https://facebook.com" },
         { name: "Twitter", icon: "assets/img/Icon twiter footer.svg", url: "https://twitter.com" },
@@ -75,7 +78,7 @@ const DAForm = ({ editingItem, onSave }) => {
             window.open(link, "_blank", "noopener,noreferrer");
         }
     };
-
+    
     return (
         <>
         <section>
@@ -99,8 +102,9 @@ const DAForm = ({ editingItem, onSave }) => {
                 ))}
             </div>
 
-            {/* form */}
+              {/* Contact form */}
             <form className="contact-us-form" onSubmit={handleSubmit}>
+                   {/* Full name and email fields */}
                 <div className="name-and-email-container">
                     <div className="name-email">
                         <label htmlFor="full-name">Full Name</label>
@@ -124,6 +128,7 @@ const DAForm = ({ editingItem, onSave }) => {
                         />
                     </div>
                 </div>
+                   {/* Contact reasons */}
                 <div className="resons-container">
                     <label>Why are you contacting us?</label>
                     <div className="resons">
@@ -142,8 +147,7 @@ const DAForm = ({ editingItem, onSave }) => {
                         ))}
                     </div>
                 </div>
-
-
+                {/* User message */}
                 <div className="user-message">
                     <label htmlFor="your-message">Your Message</label>
                     <textarea
@@ -153,7 +157,7 @@ const DAForm = ({ editingItem, onSave }) => {
                         onChange={(e) => setYourMessage(e.target.value)}
                     />
                 </div>
-
+                 {/* Submit button */}
                 <input
                     className="submit"
                     type="submit"
