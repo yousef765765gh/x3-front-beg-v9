@@ -96,6 +96,9 @@ nav {
                 &:last-child{
                     display: block;
                 }
+                &:nth-child(5){
+                    display: none;
+                }
             }
             /* تنسيق فتح القائمة المخفية ul */
             &.open {

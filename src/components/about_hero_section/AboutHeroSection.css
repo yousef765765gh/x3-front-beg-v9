@@ -19,9 +19,11 @@
     height: 100%;
     background-size: cover;
     background-position: center;
+    background-color: #ACFF2433;
     background-blend-mode: color;
     /* سحب الوان الصورة و جعلها داكنة */
-    filter: grayscale(100%) brightness(0.3);
+    filter: grayscale(100%) brightness(0.29) contrast(1.12);
+    scale: 1.1;
     opacity: 0.88;
     z-index: 1;
 }
@@ -33,7 +35,7 @@
     width: 100%;
     height: 100%;
     background-image: url('/assets/img/backgroundsection.png');
-    opacity: 0.6;
+    opacity: 0.5;
     z-index: 3;
 }
 
