@@ -9,7 +9,6 @@
     }
   }
     .DA_Slider {
-        overflow: hidden;
         position: relative;
       .DA_Slide {
         display: flex;
@@ -59,9 +58,7 @@
 
 @media screen and (min-width:1440px)  {
   .DA_CardsContainer {
-
     &.grid {
-
       .DA_Slide {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -82,6 +79,7 @@
 
 @media screen and (max-width:1440px) {
   .DA_CardsContainer {
+    overflow: hidden;
     .DA_Slide {
       display: flex;
     }
