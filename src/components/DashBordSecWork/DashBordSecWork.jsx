@@ -29,7 +29,7 @@ const DashBordSecWork = () => {
         setFormData({ id: '', title: '', description: '', image: '', name: '', link: '', icon: '' })
     };
     const handleDelete = (id) => {//رسالة تنبيه
-        if (window.confirm("هل أنت متأكد من حذف هذا الكرت؟")) {
+        if (window.confirm("Are You Sure For Delete This Card? ")) {
             setWorks(works.filter(item => item.id !== id))
         }
     }
@@ -41,12 +41,13 @@ const DashBordSecWork = () => {
 
     return (
         <>
-            <div>
-                <h1>Dashboard</h1>
+            <section>
+                
 
 
-                <section >
-                    <h3>{isEditing ? "تعديل الكرت الحالي" : "إضافة كرت جديد"}</h3>
+                <div>
+                    <h2>Dashboard</h2>
+                    <h3>{isEditing ? "Edit Card " : "Add New Card"}</h3>
                     <form onSubmit={handleSubmit}>
                         <div>
                             <label>title</label>
@@ -101,7 +102,7 @@ const DashBordSecWork = () => {
                             />
                         </div>
                         <button type="submit">
-                            {isEditing ? "حفظ التعديلات" : "إضافة للجدول"}
+                            {isEditing ? "Save Editing" : "Add To Table"}
                         </button>
                         {isEditing && (
                             <button type="button" onClick={() => { setIsEditing(false); setFormData({ id: '', title: '', description: '' }) }} >
@@ -109,10 +110,10 @@ const DashBordSecWork = () => {
                             </button>
                         )}
                     </form>
-                </section>
+                </div>
 
 
-                <section>
+                <div>
                     <h3>cards</h3>
                     <table >
                         <thead>
@@ -146,8 +147,8 @@ const DashBordSecWork = () => {
                         </tbody>
                     </table>
 
-                </section>
-            </div >
+                </div>
+            </section>
         </>
 
 
