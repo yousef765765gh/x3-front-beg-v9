@@ -1,20 +1,26 @@
-import './SectionAtSquareUp.css'
-import TitleAtSquer from '../TitleAtSquer/TitleAtSquer'
-import { useEffect, useState } from 'react';
-import ProcessCard from '../ProcessCard/ProcessCard';
-import heroProcess from "/assets/img/faq section Home+hero section process+contactusfaq.png"
-import AboutHeroSection from '../about_hero_section/AboutHeroSection';
+import "./SectionAtSquareUp.css";
+import TitleAtSquer from "../TitleAtSquer/TitleAtSquer";
+import { useEffect, useState } from "react";
+import ProcessCard from "../ProcessCard/ProcessCard";
+import processData from "../../data/ProcessDataAtSquar.json";
+import heroProcess from "/assets/img/faq section Home+hero section process+contactusfaq.png";
+import AboutHeroSection from "../about_hero_section/AboutHeroSection";
 
-// استيراد ملف الjs بدل الجيسون 
-import { getProcessCards } from "../../data/processStorage";
+const STORAGE_KEY = "processCards";
 
 const SectionAtSquareUp = () => {
   const [showAll, setShowAll] = useState(false);
-  const [processData, setProcessData] = useState([]);
+  const [cards, setCards] = useState([]);
 
-  // تحميل البيانات من localStorage
   useEffect(() => {
-    setProcessData(getProcessCards());
+    const stored = localStorage.getItem(STORAGE_KEY);
+
+    if (stored) {
+      setCards(JSON.parse(stored));
+    } else {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(processData));
+      setCards(processData);
+    }
   }, []);
 
   return (
@@ -33,18 +39,16 @@ const SectionAtSquareUp = () => {
       />
 
       <div className="at-squar-card">
-        {
-          processData
-            .slice(0, showAll ? processData.length : 4)
-            .map((item, index) => (
-              <ProcessCard
-                key={index}
-                number={item.number}
-                title={item.title}
-                description={item.description}
-              />
-            ))
-        }
+        {cards
+          .slice(0, showAll ? cards.length : 4)
+          .map((item, index) => (
+            <ProcessCard
+              key={index}
+              number={item.number}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
       </div>
 
       <div className="show-more-btn">
@@ -57,3 +61,6 @@ const SectionAtSquareUp = () => {
 };
 
 export default SectionAtSquareUp;
+
+
+

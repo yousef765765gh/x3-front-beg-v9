@@ -1,38 +1,38 @@
 import { useEffect, useState } from "react";
-import processData from "../../data/ProcessDataAtSquar.json";
+import Aboutdata from "../../data/Aboutdata.json";
 import "../cssDashboard/Dashboard.css";
 
-const STORAGE_KEY = "processCards";
+const STORAGE_KEY = "aboutCards";
 
-const ProcessDashboard = () => {
-  const [cards, setCards] = useState([]);
-  const [form, setForm] = useState({
+const AboutDashboard = () => {
+    const [cards, setCards] = useState([]);
+    const [form, setForm] = useState({
     number: "",
     title: "",
     description: ""
-  });
-  const [editIndex, setEditIndex] = useState(null);
+    });
+    const [editIndex, setEditIndex] = useState(null);
 
   // تحميل البيانات
-  useEffect(() => {
+    useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
 
     if (stored) {
-      setCards(JSON.parse(stored));
+        setCards(JSON.parse(stored));
     } else {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(processData));
-      setCards(processData);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(Aboutdata));
+        setCards(Aboutdata);
     }
-  }, []);
+    }, []);
 
   // تغيير القيم
-  const handleChange = (e) => {
+    const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-  };
+};
 
   // إضافة أو تعديل
-  const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.title || !form.description) return;
 
@@ -40,18 +40,18 @@ const ProcessDashboard = () => {
 
     if (editIndex !== null) {
       // تعديل
-      updatedCards[editIndex] = {
+        updatedCards[editIndex] = {
         ...updatedCards[editIndex],
         title: form.title,
         description: form.description
-      };
+        };
     } else {
       // إضافة
-      updatedCards.push({
+        updatedCards.push({
         number: String(updatedCards.length + 1).padStart(2, "0"),
         title: form.title,
         description: form.description
-      });
+        });
     }
 
     setCards(updatedCards);
@@ -60,16 +60,16 @@ const ProcessDashboard = () => {
     // reset
     setForm({ number: "", title: "", description: "" });
     setEditIndex(null);
-  };
+};
 
   // حذف
-  const handleDelete = (index) => {
+    const handleDelete = (index) => {
     const updatedCards = cards
-      .filter((_, i) => i !== index)
-      .map((item, i) => ({
+        .filter((_, i) => i !== index)
+        .map((item, i) => ({
         ...item,
         number: String(i + 1).padStart(2, "0")
-      }));
+        }));
 
     setCards(updatedCards);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedCards));
@@ -80,67 +80,65 @@ const ProcessDashboard = () => {
     setForm(cards[index]);
     setEditIndex(index);
   };
-  
+
   return (
     <section className="dashboard-container">
-      <h2 className="titleDash">Process At SquareUp</h2>
+      <h2 className="titleDash">About Our Story Dashboard</h2>
+
       {/* Form */}
-      <form className="form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
         <input
-          type="text"
-          name="title"
-          placeholder="Title"
-          value={form.title}
-          onChange={handleChange}
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={form.title}
+            onChange={handleChange}
         />
 
         <textarea
-          name="description"
-          placeholder="Description"
-          value={form.description}
-          onChange={handleChange}
-          rows="5"
+            name="description"
+            placeholder="Description"
+            value={form.description}
+            onChange={handleChange}
+            rows="5"
         />
 
         <button type="submit">
-          {editIndex !== null ? "Update" : "Add"}
+        {editIndex !== null ? "Update" : "Add"}
         </button>
-      </form>
+    </form>
 
       {/* Table */}
-      <table>
+        <table>
         <thead>
-          <tr>
+        <tr>
             <th>#</th>
             <th>Number</th>
             <th>Title</th>
             <th>Description</th>
             <th>Actions</th>
-          </tr>
+        </tr>
         </thead>
 
         <tbody>
-          {cards.map((item, index) => (
+        {cards.map((item, index) => (
             <tr key={index}>
-              <td>{index + 1}</td>
-              <td>{item.number}</td>
-              <td>{item.title}</td>
-              <td>{item.description.slice(0, 60)}...</td>
-              <td>
-                <button onClick={() => handleEdit(index)}className="edit-btn">Edit</button>{" "}
+                <td>{index + 1}</td>
+                <td>{item.number}</td>
+                <td>{item.title}</td>
+                <td>{item.description.slice(0, 60)}...</td>
+                <td>
+                <button
+                    onClick={() => handleEdit(index)}
+                    className="edit-btn">Edit</button>{" "}
                 <button onClick={() => handleDelete(index)}className="delete-btn">Delete</button>
-              </td>
+                </td>
             </tr>
-          ))}
+        ))}
         </tbody>
-      </table>
+    </table>
     </section>
-  );
+    );
 };
 
-export default ProcessDashboard;
-
-
-
-
-
+export default AboutDashboard;
