@@ -22,9 +22,13 @@
         padding: 16px;
         border-radius: 8px;
         color: rgb(117, 108, 108);
-        &:focus{
-            border-color: red;
-        }
+    }
+    textarea{
+        border: 2px solid rgb(75, 72, 72);
+        background-color:var(--whit-gray-color);
+        padding: 16px;
+        border-radius: 8px;
+        color: rgb(117, 108, 108);
     }
     button{
         background-color: var(--lime-green-color);

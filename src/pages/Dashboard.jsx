@@ -1,11 +1,13 @@
 import DASliderDashboard from "../components/DASliderDashboard/DASliderDashboard"
+import ProcessDashboard from "../components/ProcessDashboard/ProcessDashboard"
 
 const Dashboard = () => {
-    return (
+        return (
         <>
-        <DASliderDashboard/>
+                <DASliderDashboard/>
+                <ProcessDashboard/>
         </>
-    )
+        )
 }
 
 export default Dashboard

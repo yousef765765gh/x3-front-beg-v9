@@ -10,18 +10,16 @@ const testimonials = [
     },
     {
         title: "Working with SquareUp was a breeze.",
-        subTitle:
-            "They understood our vision for a mobile app that streamlined our food delivery service. The app they delivered exceeded our expectations, and our customers love the seamless ordering experience. SquareUp is a trusted partner we highly recommend.",
+        subTitle:"They understood our vision for a mobile app that streamlined our food delivery service. The app they delivered exceeded our expectations, and our customers love the seamless ordering experience. SquareUp is a trusted partner we highly recommend.",
         name: "Sarah Johnson",
         job: "Founder of HungryBites.",
         btn: "Open Website",
         img: "assets/img/Profile2.png",
     },
     {
-        title:
-            "SquareUp developed a comprehensive booking and reservation system for our event management company",
+        title:"SquareUp developed a comprehensive booking and reservation system for our event management company",
         subTitle:
-            "Their attention to detail and commitment to delivering a user-friendly platform was evident throughout the project. The system has streamlined our operations and enhanced our clients' event experiences.",
+"Their attention to detail and commitment to delivering a user-friendly platform was evident throughout the project. The system has streamlined our operations and enhanced our clients' event experiences.",
         name: "Mark Thompson",
         job: "CEO of EventMasters",
         btn: "Open Website",
