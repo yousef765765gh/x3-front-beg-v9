@@ -7,7 +7,13 @@ import AboutHeroSection from "../about_hero_section/AboutHeroSection";
 import TitleAtSquer from "../TitleAtSquer/TitleAtSquer";
 const WorksSection = () => {
     const [showAll, setShowAll] = useState(false);
-    const visibleWorks = showAll ? worksJson : worksJson.slice(0, 4);
+        
+    const [works] = useState(() => {
+        const saved = localStorage.getItem("works")
+        return saved ? JSON.parse(saved) : worksJson
+    })
+    const visibleWorks = showAll ? works : works.slice(0, 4) 
+    
     return (
         <section className="l-work">
             <AboutHeroSection
