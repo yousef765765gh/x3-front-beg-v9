@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import testimonials from "../../data/TestimonialsCards";
-import "./DASliderDashboard.css";
-
+import "../cssDashboard/Dashboard.css";
 const DASliderDashboard = () => {
     const [dashboardSliders, setDashboardSliders] = useState([...testimonials]);
     const [formData, setFormData] = useState({
@@ -56,17 +55,17 @@ const DASliderDashboard = () => {
     };
 
     return (
-        <div className="dashboard-container">
-            <h2>Manage Slides</h2>
+        <section className="dashboard-container">
+            <h2 className="titleDash">What our Clients say About us:</h2>
 
-            <form onSubmit={handleSubmit} className="slide-form">
+            <form onSubmit={handleSubmit} className="form">
                 <input name="title" value={formData.title} onChange={handleChange} placeholder="Title" />
                 <input name="subTitle" value={formData.subTitle} onChange={handleChange} placeholder="Description" />
                 <input name="name" value={formData.name} onChange={handleChange} placeholder="Name" />
                 <input name="job" value={formData.job} onChange={handleChange} placeholder="Job" />
                 <input name="btn" value={formData.btn} onChange={handleChange} placeholder="Button Text" />
                 <input name="img" value={formData.img} onChange={handleChange} placeholder="Image URL" />
-                <button type="submit">{formData.id ? "Update" : "Add"} Slide</button>
+                <button type="submit">{formData.id ? "Update" : "Add"} Card</button>
             </form>
 
             <table className="slides-table">
@@ -112,7 +111,7 @@ const DASliderDashboard = () => {
                     )}
                 </tbody>
             </table>
-        </div>
+        </section>
     );
 };
 
