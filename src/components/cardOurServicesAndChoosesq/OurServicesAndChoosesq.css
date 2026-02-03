@@ -1,0 +1,177 @@
+
+/* ايقونة الكرت */
+.yb-icon{
+    border-radius: 10px;
+    width: 88px;
+    border: 1px solid var(--whit-gray-color);
+    padding: 24px;
+    margin-bottom: 40px;
+    background: linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%),linear-gradient(229.29deg, rgba(158, 255, 0, 0.2) 0%, rgba(158, 255, 0, 0) 32.16%);
+    
+    .yb-img{
+        background-color: transparent;
+        width: 40px;
+        height: 40px;
+    }
+}
+.yb-description{
+        font-size: 18px;
+        color:#E6E6E6;
+        flex-grow: 1;
+    }
+.yb-title{
+    color: white;
+}
+
+
+/* تنسيق الكرت بوجود الزر */
+.yb-card{
+    border: 1px solid var(--whit-gray-color);
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    &:hover{
+        border: 1px solid var(--lime-green-color);
+    }
+    .yb-title{
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .yb-btn{
+    padding: 18px 16px;
+    text-align: center;
+    background-color: var(--whit-gray-color);
+    border-radius: 8px;
+    margin-top: 104px;
+    &:hover{
+        background-color: #201d1d;
+    }
+    .yb-link{
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        color: white;
+        }
+    }
+}
+/* تنسيق الكرت بدون زر */
+    .yb-card.no-button{
+        border: 1px solid var(--whit-gray-color);
+        padding: 80px;
+        &:hover{
+            border: 1px solid var(--lime-green-color);
+        }
+        .yb-title{
+            font-size: 26px;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+        
+        .horizontal{
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 28px;
+        }
+    }
+
+/* شاشات اللابتوب */
+@media screen and (max-width: 1440px) {
+    /* تنسيق الكرت بوجود زر  */
+    .yb-card{
+        padding: 40px;
+
+        .yb-title{
+            font-size: 24px;
+            margin-bottom: 14px;
+        }
+
+        .yb-description{
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .yb-btn{
+        padding: 14px 16px;
+        border-radius: 6px;
+        .yb-link{
+            font-size: 14px;
+            }
+        }
+    }
+
+/*تنسيق الكرت بدون زر */
+.yb-card.no-button{
+    padding: 60px;
+    .yb-title{
+        font-size: 20px;
+    }
+    .yb-description{
+        font-size: 16px;
+    }
+    .horizontal{
+        margin-bottom: 30px;
+        gap: 14px;
+    }
+}
+
+.yb-icon{
+    border-radius: 8px;
+    width: 70px;
+    padding: 20px;
+    margin-bottom: 30px;
+    .yb-img{
+        width: 30px;
+        height: 30px;
+    }
+}
+}
+/* شاشات الصغيرة */
+@media screen and (max-width: 992px){
+    /* تنسيق الكرت  بوجود الزر */
+    .yb-card{
+        padding: 30px;
+        .yb-container{
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+    .yb-title{
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+    .yb-description{
+        font-size: 14px;
+    }
+}
+/* تنسيق الكرت بدون زر */
+    .yb-card.no-button{
+        max-width: 100%;
+        min-height: min-content;
+        padding: 40px 30px;
+        .yb-title{
+            font-size: 20px;
+        }
+        .yb-description{
+            font-size: 16px;
+        }
+        .horizontal{
+            margin-bottom: 24px;
+        }
+    }
+
+    .yb-icon{
+        border-radius: 8px;
+        width: 58px;
+        padding: 16px;
+        margin-bottom: 0px;
+        .yb-img{
+            width: 26px;
+            height: 26px;
+        }
+    }
+}

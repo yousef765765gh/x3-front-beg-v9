@@ -1,0 +1,114 @@
+.DA_CardsContainer {
+  max-width: 100%;
+  color: #fff;
+  border: 1px solid var(--whit-gray-color);
+  &.grid{
+    .DA_Slide {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+    .DA_Slider {
+        position: relative;
+      .DA_Slide {
+        display: flex;
+      }
+      .Button-left,.Button-right {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0, 0, 0, 0.3);
+          border: none;
+          font-size: 40px;
+          color: #fff;
+          cursor: pointer;
+          padding: 10px 12px;
+          border-radius: 50%;
+          z-index: 1;
+          &:hover{
+            background-color: var(--whit-green-text-color);
+            color: black;
+          }
+      }
+      .Button-left{
+        left: 10px;
+      }
+      .Button-right{
+        right: 10px;
+      }
+  }
+    .Dots{
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin: 24px auto;
+        .Dot{
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: #444;
+              cursor: pointer;
+                &.active {
+                    background: var(--whit-green-text-color);
+                    transform: scale(1.4);
+                }
+        }
+    }
+}
+
+@media screen and (min-width:1440px)  {
+  .DA_CardsContainer {
+    &.grid {
+      .DA_Slide {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .Button-left,
+    .Button-right {
+      display: none;
+    }
+
+    .Dots {
+      display: none;
+    }
+  }
+}
+
+
+@media screen and (max-width:1440px) {
+  .DA_CardsContainer {
+    overflow: hidden;
+    .DA_Slide {
+      display: flex;
+    }
+
+    .Button-left,
+    .Button-right {
+      display: block;
+    }
+
+    .Dots {
+      display: flex;
+    }
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .DA_CardsContainer {
+    .DA_Slide {
+      display: flex;
+    }
+
+    .Button-left,
+    .Button-right {
+      display: none;
+    }
+
+    .Dots {
+      display: flex;
+    }
+  }
+}

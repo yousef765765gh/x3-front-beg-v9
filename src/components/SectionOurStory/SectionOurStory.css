@@ -1,0 +1,32 @@
+.our-story {
+    max-width: 100%;
+    height: max-content;
+    overflow:hidden;
+    .ourstory-title{
+        padding: 100px  50px;
+        width: 100%;
+    }
+    .our-story-card{
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+    }
+}
+
+@media screen and (max-width:992px){
+    .our-story{
+        .ourstory-title{
+            padding: 80px 50px;
+        }
+    }
+}
+
+@media screen and (max-width:992px){
+    .our-story{
+        .ourstory-title{
+            padding: 40px 24px;
+        }
+        .our-story-card{
+            grid-template-columns: 1fr;
+        }
+    }
+}

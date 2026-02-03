@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import "./AboutHeroSection.css"
 const AboutHeroSection = ({
-    hasButton,//ظهور الايقونة و الزر يعتمد عليه ياخد اما true اوfalse
-    imageBackground,//لاعطاء صورة الخلفية بحيث يتم تضمينا داخل importثم الاستداء على حسب الاسم
-    imageIcone,//صورة الايقونة
-    titleSection,//العنوان
-    contentSection,//النص 
-    buttonText//لتضميين الزر
+    hasButton,
+    imageBackground,
+    imageIcone,
+    titleSection,
+    contentSection,
+    buttonText
     }) => {
         const navigate = useNavigate();
         return (

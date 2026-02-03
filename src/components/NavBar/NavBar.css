@@ -1,11 +1,12 @@
 /* تنسيق عام على الناف بار */
 nav {
+    padding: 22px 161px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--whit-gray-color);
-    padding: 22px 162px; 
     z-index: 6;
+    background-color: var(--dark-gray-color);
     img {
         max-width:  178px;
     }
@@ -36,6 +37,9 @@ nav {
         border-radius:8px ;
         background-color: var(--lime-green-color);
         border: none;
+        &:hover{
+            background-color: var(--whit-green-text-color);
+        }
     }
     .btn-nav-media{
         display: none;
@@ -91,6 +95,9 @@ nav {
                 }
                 &:last-child{
                     display: block;
+                }
+                &:nth-child(5){
+                    display: none;
                 }
             }
             /* تنسيق فتح القائمة المخفية ul */

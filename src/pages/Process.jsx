@@ -1,14 +1,14 @@
-import React from "react";
-
+import SectionAtSquareUp from "../components/SectionAtSquareUp/SectionAtSquareUp"
 
 const Process = () => {
     return (
-        <div>
-            
+        <>
+            <SectionAtSquareUp/>
+        </>
+    )
+}
 
             
-        </div>
-    );
-};
+       
 
 export default Process;

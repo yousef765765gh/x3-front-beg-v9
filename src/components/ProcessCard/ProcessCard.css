@@ -1,0 +1,105 @@
+/* تنسيق العام للكرت */
+.process-card {
+    width: 100%; 
+    border: 1px solid var(--whit-gray-color);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 100px 50px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    &:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px var(--whit-green-text-color);
+    background-color: var(--dark-gray-color);
+    }
+    .number-card{
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        h2{
+            color: var(--whit-green-text-color);
+            font-weight: 600;
+            font-size: 150px;
+            padding-bottom: 10px;
+        }
+        .title-card{
+            width: 100%;
+            padding-top: 43px;
+            h3{
+            color: rgba(152, 152, 154, 1);
+            padding-bottom: 26px;
+            padding-left: 10px;
+            font-weight: 500;
+            font-size: 30px;
+            border-bottom: 1px solid var(--whit-gray-color);
+        }
+        }
+    }
+    .text-card{
+        p{
+            font-family: "Inter";
+            color: rgba(152, 152, 154, 1);
+            font-size: 18px;
+            line-height: 150%;
+        }
+    }
+}
+/* تنسيق شاشات لابتوب */
+@media screen and (max-width:1440px) {
+    .process-card{
+        gap: 40px;
+        padding: 80px 40px;
+            .number-card{
+                height: 84px;
+                h2{
+                    font-size: 120px;
+                    padding-bottom: 7px;
+                }
+                .title-card{
+                    padding-top: 35px;
+                    h3{
+                    padding-bottom: 20px;
+                    padding-left: 10px;
+                    font-size: 24px;
+                }
+                }
+                
+            }
+            .text-card{
+                p{
+                    font-size: 16px;
+                }
+            }
+    }
+}
+/* تنسيق شاشات صغيرة */
+@media screen and (max-width:992px) {
+    .process-card{
+        gap: 30px;
+        padding: 40px 24px;
+            .number-card{
+                height: 56px;
+                h2{
+                    font-size: 80px;
+                    padding-bottom: 4px;
+                }
+                .title-card{
+                    padding-top: 18px;
+                    h3{
+                        padding-bottom: 14px;
+                        padding-left: 10px;
+                        font-size: 20px;
+                    }
+                }
+            }
+                .text-card{
+                    p{
+                        font-size: 14px;
+                    }
+                }
+    }
+}
+/* finsh */
+
+

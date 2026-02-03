@@ -1,0 +1,10 @@
+.yb-our-services{
+    display: flex;
+}
+@media screen and (max-width: 992px){
+    .yb-our-services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+}

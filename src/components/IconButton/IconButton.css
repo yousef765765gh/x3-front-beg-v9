@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
     border: 1px solid var(--whit-gray-color);
     border-radius: 8px;
@@ -11,6 +12,10 @@
     p {
     color: #98989A;
     font-size: 18px;
+    }
+    .so-icon{
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 .icon {

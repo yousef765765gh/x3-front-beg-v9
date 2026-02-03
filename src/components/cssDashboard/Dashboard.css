@@ -1,0 +1,83 @@
+
+.dashboard-container{
+    margin: 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.titleDash{
+    color: white ;
+}
+.form{
+    width: 100%;
+    padding: 32px 72px;
+    background-color: var(--whit-gray-color);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 32px;
+    textarea,input,select{
+        border: 2px solid rgb(75, 72, 72);
+        background-color:var(--whit-gray-color);
+        padding: 16px;
+        border-radius: 8px;
+        color: rgb(117, 108, 108);
+    }
+    button{
+        background-color: var(--lime-green-color);
+        color: var(--whit-gray-color);
+        padding: 16px;
+        margin: 8px 48px;
+        border-radius: 32px;
+        border: none;
+    }
+}
+table{
+    background-color: var(--whit-gray-color);
+    padding: 32px;
+    border-collapse:collapse;
+    thead{
+        background-color: var(--lime-green-color);
+        border-radius: 16px;
+        th{
+            padding: 24px;
+        }
+    }
+    tbody{
+        color: rgb(169, 160, 160);
+        tr{
+            border: 1px solid #434242 ;
+            border-radius: 16px;
+            &:hover{
+                background-color: #424040;
+            }
+        }
+        td{
+            padding: 16px;
+        }
+        img{
+            max-width: 150px;
+        }
+    }
+    button{
+        border: none;
+        border-radius: 16px;
+        padding: 8px 16px;
+        margin: 8px;
+        color: white;
+    }
+    .edit-btn{
+        background-color: rgba(48, 99, 202, 0.688);
+        &:hover{
+            background-color: rgba(3, 3, 255, 0.608);
+            transform: translateY(-3px);
+        }
+    }
+    .delete-btn{
+        background-color: rgb(183, 41, 41);
+        &:hover{
+            background-color: red;
+            transform: translateY(-3px);
+        }
+    }
+}
