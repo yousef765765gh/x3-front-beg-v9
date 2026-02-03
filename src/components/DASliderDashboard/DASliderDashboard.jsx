@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import testimonials from "../../data/TestimonialsCards";
+import testimonials from "../../data/TestimonialsCards.json";
 import "../cssDashboard/Dashboard.css";
 const DASliderDashboard = () => {
     const [dashboardSliders, setDashboardSliders] = useState([...testimonials]);
