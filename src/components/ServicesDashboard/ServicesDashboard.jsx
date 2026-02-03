@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
-// افترضت وجود ملف بيانات أولي، إذا لم يوجد سنقوم بإنشائه في الخطوة القادمة
-import ServicesData from "../../data/ServicesData.json"; 
-import "../cssDashboard/Dashboard.css"; // استخدام ملف الـ CSS الموحد
+import ServicesData from "../../data/defaultServices.json"; 
+import "../cssDashboard/Dashboard.css"; 
 
-const STORAGE_KEY = "services_data";
+const STORAGE_KEY = "services_cards";
 
 const ServicesDashboard = () => {
   const [services, setServices] = useState([]);
   const [form, setForm] = useState({
+    icon: "",
     title: "",
     description: "",
-    icon: "" // لإضافة مسار الأيقونة
+    contentBtn: "Learn More"
   });
   const [editIndex, setEditIndex] = useState(null);
 
-  // 1. تحميل البيانات عند فتح الصفحة
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
@@ -25,13 +24,11 @@ const ServicesDashboard = () => {
     }
   }, []);
 
-  // 2. معالجة تغيير مدخلات الفورم
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  // 3. إضافة أو تعديل خدمة
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.title || !form.description) return;
@@ -39,71 +36,63 @@ const ServicesDashboard = () => {
     let updatedServices = [...services];
 
     if (editIndex !== null) {
-      // حالة التعديل
+      // تعديل
       updatedServices[editIndex] = { ...form };
     } else {
-      // حالة الإضافة الجديدة
-      updatedServices.push({ ...form });
+      // إضافة
+      const newId = services.length > 0 ? services[services.length - 1].id + 1 : 1;
+      updatedServices.push({ ...form, id: newId });
     }
 
     setServices(updatedServices);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedServices));
-
-    // إعادة ضبط الفورم
-    setForm({ title: "", description: "", icon: "" });
+    setForm({ icon: "", title: "", description: "", contentBtn: "Learn More" });
     setEditIndex(null);
   };
 
-  // 4. حذف خدمة
   const handleDelete = (index) => {
     const updatedServices = services.filter((_, i) => i !== index);
     setServices(updatedServices);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedServices));
   };
 
-  // 5. تجهيز البيانات للتعديل
   const handleEdit = (index) => {
     setForm(services[index]);
     setEditIndex(index);
   };
 
   return (
-    <section className="dashboard-container">
+    <section className="dashboard-container"> {/* */}
       <h2 className="titleDash">Services Section Dashboard</h2>
 
-      {/* Form القسم المسؤول عن الإضافة والتعديل */}
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}> {/* */}
         <input
           type="text"
           name="title"
-          placeholder="Service Title (e.g. Design)"
+          placeholder="Service Title"
           value={form.title}
           onChange={handleChange}
         />
-        
         <input
           type="text"
           name="icon"
-          placeholder="Icon Path (e.g. /assets/img/icon.svg)"
+          placeholder="Image URL"
           value={form.icon}
           onChange={handleChange}
         />
-
         <textarea
           name="description"
-          placeholder="Service Description"
+          placeholder="Description"
           value={form.description}
           onChange={handleChange}
           rows="5"
         />
-
         <button type="submit">
           {editIndex !== null ? "Update Service" : "Add Service"}
         </button>
       </form>
 
-      {/* Table القسم المسؤول عن عرض البيانات */}
-      <table>
+      <table> {/* */}
         <thead>
           <tr>
             <th>#</th>
@@ -115,20 +104,14 @@ const ServicesDashboard = () => {
         </thead>
         <tbody>
           {services.map((item, index) => (
-            <tr key={index}>
+            <tr key={item.id || index}>
               <td>{index + 1}</td>
-              <td>
-                <img src={item.icon} alt={item.title} style={{ width: "30px" }} />
-              </td>
+              <td><img src={item.icon} alt={item.title} style={{ width: "30px" }} /></td>
               <td>{item.title}</td>
               <td>{item.description.slice(0, 50)}...</td>
               <td>
-                <button onClick={() => handleEdit(index)} className="edit-btn">
-                  Edit
-                </button>
-                <button onClick={() => handleDelete(index)} className="delete-btn">
-                  Delete
-                </button>
+                <button onClick={() => handleEdit(index)} className="edit-btn">Edit</button>
+                <button onClick={() => handleDelete(index)} className="delete-btn">Delete</button>
               </td>
             </tr>
           ))}
