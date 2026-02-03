@@ -8,4 +8,4 @@ const Process = () => {
     )
 }
 
-export default Process
+export default Process;

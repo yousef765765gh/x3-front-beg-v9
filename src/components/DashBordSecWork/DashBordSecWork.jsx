@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import worksJson from "../../data/worksCard.json";
-import { FiArrowUpRight } from 'react-icons/fi';
 
 const DashBordSecWork = () => {
     const [works, setWorks] = useState(() => {// حتى تطهر لكروت في الجدول 
@@ -32,11 +31,6 @@ const DashBordSecWork = () => {
         if (window.confirm("Are You Sure To Delete This Card? ")) {
             setWorks(works.filter(item => item.id !== id))
         }
-    }
-    const startEdit = (item) => {
-        setFormData(item)
-        setIsEditing(true)
-        window.scrollTo(0, 0) // رفع الصفحة للأعلى ليظهر الفورم
     }
 
     return (
