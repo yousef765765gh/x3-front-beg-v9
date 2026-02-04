@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import testimonials from "../../data/TestimonialsCards.json";
 import "../cssDashboard/Dashboard.css";
 const DASliderDashboard = () => {
-    const [dashboardSliders, setDashboardSliders] = useState([...testimonials]);
     const [formData, setFormData] = useState({
         id: null,
         title: "",
@@ -12,6 +11,14 @@ const DASliderDashboard = () => {
         btn: "",
         img: "",
     });
+    const [dashboardSliders, setDashboardSliders] = useState(() => {
+    const stored = localStorage.getItem("dashboardSliders");
+    if (stored) return JSON.parse(stored);
+    const initial = testimonials.map((slide, index) => ({ ...slide, id: slide.id ?? index + 1 }));
+    localStorage.setItem("dashboardSliders", JSON.stringify(initial)); 
+    return initial;
+    });
+
 
     const handleEdit = (id) => {
         const slide = dashboardSliders.find(s => s.id === id);
@@ -19,8 +26,11 @@ const DASliderDashboard = () => {
     };
 
     const handleDelete = (id) => {
-        const updated = dashboardSliders.filter(s => s.id !== id);
+    if (window.confirm("Do you need delete?")) {
+        const updated = dashboardSliders.filter(slide => slide.id !== id);
         setDashboardSliders(updated);
+        localStorage.setItem("dashboardSliders", JSON.stringify(updated)); 
+    }
     };
 
     const handleChange = (e) => {
