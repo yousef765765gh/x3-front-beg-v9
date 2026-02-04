@@ -9,25 +9,21 @@ const DAForm = ({ editingItem, onSave }) => {
     const [email, setEmail] = useState("");
     const [yourMessage, setYourMessage] = useState("");
     const [resons, setResons] = useState([]);
-
+    const [id, setId] = useState(null);
       // Populate form fields when editing an existing item
     useEffect(() => {
-        if (editingItem) {
-            setFullName(editingItem.fullName , "");
-            setEmail(editingItem.email , "");
-            setYourMessage(editingItem.yourMessage , "");
-            setResons(editingItem.resons , []);
+        const storedItem  = localStorage.getItem("editingItem");
+        if (storedItem) {
+            const item = JSON.parse(storedItem);
+            setId(item.id);
+            setFullName(item.fullName);
+            setEmail(item.email);
+            setYourMessage(item.yourMessage);
+            setResons(item.resons);
+            localStorage.removeItem("editingItem");
         }
-    }, [editingItem]);
+    }, []);
 
-    const handleCheckboxChange = (e) => {
-        const value = e.target.value;
-        if (e.target.checked) {
-            setResons([...resons, value]);
-        } else {
-            setResons(resons.filter((item) => item !== value));
-        }
-    };
     const handleRadioChange = (e) => {
         setResons(e.target.value);
     };
@@ -37,7 +33,7 @@ const DAForm = ({ editingItem, onSave }) => {
         e.preventDefault();
           // Create a new form entry
         const newItem = {
-            id: editingItem ? editingItem.id : Date.now(),
+            id: id ? id : Date.now(),
             fullName,
             email,
             resons,
@@ -47,19 +43,25 @@ const DAForm = ({ editingItem, onSave }) => {
         if (onSave) {
             onSave(newItem, !!editingItem);
         } else {
-            const stored = localStorage.getItem("contactUsEntries");
-            const items = stored ? JSON.parse(stored) : [];
-            localStorage.setItem(
-                "contactUsEntries",
-                JSON.stringify([...items, newItem])
-            );
-        }
+        const stored = localStorage.getItem("contactUsEntries");
+        const items = stored ? JSON.parse(stored) : [];
 
+        const index = items.findIndex((i) => i.id === newItem.id);
+        if (index !== -1) {
+            items[index] = newItem; 
+        } else {
+            items.push(newItem); 
+        }
+        localStorage.setItem("contactUsEntries", JSON.stringify(items));
+        alert(`Welcome, ${fullName} to SqaureUp`);
+        window.location.reload();
+        }
         setFullName("");
         setEmail("");
         setYourMessage("");
         setResons([]);
     };
+
 // Top contact icons (email, phone, location)
     const topIcons = [
         { name: "hello@squareup.com", icon: "assets/img/Icon messag footer.svg" },
@@ -114,9 +116,9 @@ const DAForm = ({ editingItem, onSave }) => {
                             value={fullName}
                             placeholder="Type here"
                             onChange={(e) => setFullName(e.target.value)}
+                            required
                         />
                     </div>
-
                     <div className="name-email">
                         <label htmlFor="email">Email</label>
                         <input
@@ -125,6 +127,7 @@ const DAForm = ({ editingItem, onSave }) => {
                             value={email}
                             placeholder="Type here"
                             onChange={(e) => setEmail(e.target.value)}
+                            required
                         />
                     </div>
                 </div>
@@ -155,6 +158,7 @@ const DAForm = ({ editingItem, onSave }) => {
                         value={yourMessage}
                         placeholder="Type here"
                         onChange={(e) => setYourMessage(e.target.value)}
+                        required
                     />
                 </div>
                  {/* Submit button */}
@@ -164,16 +168,13 @@ const DAForm = ({ editingItem, onSave }) => {
                     value={editingItem ? "Update" : "Submit"}
                 />
             </form>
-
             {/* footer */}
             <div className="da-contact-down-footer">
                 <div className="da-contact-down-footer-buttom">
                     <p>Operating Days</p>
                     <p className="day">Monday to Friday</p>
                 </div>
-
                 <div className="da-line"></div>
-
                 <div className="da-contact-down-footer-stay-Connected">
                     <p className="da_font_size">Stay Connected</p>
                     <div className="da-contact-socialIcons">
