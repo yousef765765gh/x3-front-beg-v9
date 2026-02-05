@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import worksJson from "../../data/worksCard.json";
 
 const DashBordSecWork = () => {
-    const [works, setWorks] = useState(() => {// حتى تطهر لكروت في الجدول 
-        const saved = localStorage.getItem("works")
-        return saved ? JSON.parse(saved) : worksJson
+    const [works, setWorks] = useState(() => {//لتظهر الكروت في الصفحة
+    const saved = localStorage.getItem("works")
+    return saved
+        ? JSON.parse(saved)
+        : worksJson.map(item => ({ ...item, id: item.id.toString() })) 
     })
     const [formData, setFormData] = useState({ id: '', title: '', description: '', image: '', link: '', icon: '', name: '' })
     const [isEditing, setIsEditing] = useState(false)
@@ -32,6 +34,10 @@ const DashBordSecWork = () => {
             setWorks(works.filter(item => item.id !== id))
         }
     }
+    const startEdit = (item) => {
+    setFormData(item); 
+    setIsEditing(true);
+};
 
     return (
         <>
