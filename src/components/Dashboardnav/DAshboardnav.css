@@ -1,0 +1,50 @@
+.sidebar {
+    width: 100%;
+    background-color: #1f1f1f;
+    border-radius: 32px;
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    .buttonDash{
+        display: flex;
+        gap: 15px;
+    }
+    h2 {
+        color: white;
+        font-size: 18px;
+        margin: 0 16px 0 0;
+        padding: 0;
+        white-space: nowrap;
+    }
+    button { 
+    background-color: var(--whit-gray-color);
+    border: 1px solid #434242;
+    border-radius: 16px;
+
+    padding: 10px 14px;
+    text-align: center;
+
+    color: rgb(117, 108, 108);
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+    }
+}
+
+
+.sidebar button:hover {
+    background-color: #424040;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.sidebar button.active {
+    background-color: var(--lime-green-color);
+    border-color: var(--lime-green-color);
+    font-weight: 600;
+}

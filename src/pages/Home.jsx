@@ -1,4 +1,3 @@
-
 import OurServices from "../components/OurServices/OurServices"
 import WhyChooseSq from "../components/WhyChooseSq/WhyChooseSq"
 import Faq from "../components/FrequentlyAskedQuestions/Faq"
@@ -8,6 +7,8 @@ import DATrusted from "../components/DATrustedLogos/DATrustedLogos.jsx"
 import thankSquareUp from "/assets/img/about us section Home+hero work.png"
 import sqicon from "/assets/img/LogoSq.svg"
 import AboutHeroSection from "../components/about_hero_section/AboutHeroSection.jsx"
+
+
 const Home = () => {
     return (
         <>

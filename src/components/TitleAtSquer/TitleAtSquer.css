@@ -66,6 +66,8 @@
         }
         .text2{
             border-radius: 6px;
+            max-width: 324px;
+            width: 100%;
             padding: 10px;
             span{
                 font-size: 16px;

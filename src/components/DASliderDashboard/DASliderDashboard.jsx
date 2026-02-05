@@ -68,7 +68,6 @@ const DASliderDashboard = () => {
       job: "",
       btn: "",
       img: "",
-      paddingBottom: ""
     });
   };
 
@@ -83,7 +82,6 @@ const DASliderDashboard = () => {
         <input name="job" value={formData.job} onChange={handleChange} placeholder="Job" />
         <input name="btn" value={formData.btn} onChange={handleChange} placeholder="Button Text" />
         <input name="img" value={formData.img} onChange={handleChange} placeholder="Image URL" />
-        <input name="paddingBottom" value={formData.paddingBottom} onChange={handleChange} placeholder="Padding Bottom (px)" />
         <button type="submit">{formData.id ? "Update" : "Add"} Card</button>
       </form>
 

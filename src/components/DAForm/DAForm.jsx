@@ -122,7 +122,7 @@ const DAForm = ({ editingItem, onSave }) => {
                     <div className="name-email">
                         <label htmlFor="email">Email</label>
                         <input
-                            type="text"
+                            type="email"
                             id="email"
                             value={email}
                             placeholder="Type here"

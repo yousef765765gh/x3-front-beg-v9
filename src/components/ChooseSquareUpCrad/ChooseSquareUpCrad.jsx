@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react"
-import "./ChooseSquareUpCrad.css";
 import defaultChoseSquareUp from "/src/data/defaultChoseSquareUp.json"
 
 const STORAGE_KEY = "whyChooseCard"
@@ -79,7 +78,6 @@ const ChooseSquareUpCrad = () => {
     const onCancel = () => {
         setForm({ id: null, icon: "", title: "", description: "" });
     };
-
     return (
         <section className='dashboard-container'>
             <h2 className='titleDash'>Why Choose Square  Up:</h2>
@@ -145,7 +143,9 @@ const ChooseSquareUpCrad = () => {
                         <button type="button" onClick={() => onEdit(i)} className='edit-btn'>
                             Edit
                         </button>
-                        <button type="button" onClick={() => onDelete(i.id)} className='delete-btn'>
+                        <button type="button" 
+                        onClick={() => onDelete(i.id)} 
+                        className='delete-btn'>
                             Delete
                         </button>
                         </td>
