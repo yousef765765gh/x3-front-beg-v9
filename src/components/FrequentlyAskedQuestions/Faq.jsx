@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import CardsFaq from '../CardFaq/CardsFaq';
 import faqSecPic from '/assets/img/faq section Home+hero section process+contactusfaq.png'
 import "./Faq.css";
-import questionData  from '../../data/FAQ.json';
 import AboutHeroSection from '../about_hero_section/AboutHeroSection';
+import faq from "/src/data/faq.json"
+
 
 const Faq = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -22,14 +23,19 @@ const Faq = () => {
     const handleToggle = (index) => {
     setOpenIndex(prevIndex => prevIndex === index ? null : index);
     };
-
-    const visibleCount = isMobile && !showAll ? 4 : questionData.length;
+        const [faqData,setFaqData] = useState(() => {
+        const storedFAQ = localStorage.getItem("faqData");
+        return storedFAQ ? JSON.parse(storedFAQ) :faq })
+        useEffect(() => {
+            localStorage.setItem("faqData", JSON.stringify(faqData));
+        }, [faqData]);
+         const visibleCount = isMobile && !showAll ? 4 : faqData.length;
     const half = Math.ceil(visibleCount / 2);
-    const col1 = questionData.slice(0, half);
-    const col2 = questionData.slice(half, visibleCount);
+    const col1 = faqData.slice(0, half);
+    const col2 = faqData.slice(half, visibleCount);
 
-    const renderFaqColumn = (items, Index) => {
-    return items.map((item, i) => {
+    const renderFaqColumn = (item, Index) => {
+    return item.map((item, i) => {
         const currentIndex = Index + i;
         return (
             <CardsFaq

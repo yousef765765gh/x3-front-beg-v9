@@ -7,18 +7,9 @@ import DATrusted from "../components/DATrustedLogos/DATrustedLogos.jsx"
 import thankSquareUp from "/assets/img/about us section Home+hero work.png"
 import sqicon from "/assets/img/LogoSq.svg"
 import AboutHeroSection from "../components/about_hero_section/AboutHeroSection.jsx"
-import faq from "/src/data/faq.json"
-import { useEffect, useState } from "react"
 
 
 const Home = () => {
-    const [faqData,setFaqData] = useState(() => {
-    const storedFAQ = localStorage.getItem("faqData");
-    return storedFAQ ? JSON.parse(storedFAQ) :faq })
-    
-    useEffect(() => {
-        localStorage.setItem("faqData", JSON.stringify(faqData));
-    }, [faqData]);
     return (
         <>
             <DAHero
@@ -31,7 +22,7 @@ const Home = () => {
             <OurServices />
             <WhyChooseSq />
             <DATestimonialsSection />
-            <Faq faqData={faqData}/>
+            <Faq/>
             <AboutHeroSection
                 hasButton={true}
                 imageBackground={thankSquareUp}

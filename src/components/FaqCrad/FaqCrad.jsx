@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import faq from "/src/data/faq.json"
 
-const STORAGE_KEY = "faqCard"
+const STORAGE_KEY = "faqData"
 
 const FaqCrad = () => {
     const [cards, setCards] = useState([]);
@@ -117,8 +117,8 @@ const FaqCrad = () => {
                 <table >
                 <thead>
                     <tr>
-                        <th>Icon</th>
-                        <th>Title</th>
+                        <th>Question</th>
+                        <th>Answer</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
