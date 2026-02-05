@@ -19,7 +19,8 @@ const FaqCrad = () => {
             try {
                 const parsedData = JSON.parse(storeData);
                 const updatedData = parsedData.map((item,i) => ({
-                    ...item,id:item.id + Date.now()+i,
+                    ...item,
+                    id: item.id || Date.now() + i,
                 }));
                 setCards(parsedData);
                 localStorage.setItem(STORAGE_KEY,JSON.stringify(updatedData));
@@ -70,12 +71,12 @@ const FaqCrad = () => {
         const filtered = cards.filter((i) => i.id !== id);
         theNext(filtered);
         if (form.id === id) {
-        setForm({ id: null,question: "", answer: ""});
+        setForm({ id: "", question: "", answer: "" });
         }
     };
 
     const onCancel = () => {
-        setForm({ id: null,question: "", answer: ""});
+        setForm({ id: "", question: "", answer: "" });
     };
 
     return (
